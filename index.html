@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王俊凯 · AI产品经理</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-subtle: #f7f8fa;
+    --bg-card: #ffffff;
+    --border: #e8eaed;
+    --border-hover: #c8cdd5;
+    --accent: #1a56db;
+    --accent-light: #eff4ff;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-tertiary: #9ca3af;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.07), 0 2px 6px rgba(0,0,0,0.04);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.09), 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--text-primary); }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  section { padding: 96px 0; }
+
+  /* ── Divider ── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Hero ── */
+  #hero {
+    padding: 100px 0 80px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: var(--accent-light);
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+
+  .hero-name {
+    font-size: clamp(44px, 6vw, 68px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .hero-title strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    max-width: 500px;
+    margin-bottom: 40px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 24px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.15s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover { background: #1447c0; transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 24px;
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-subtle);
+  }
+
+  .hero-avatar {
+    width: 300px;
+    height: 360px;
+    border-radius: 18px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+
+  .hero-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #f0f0f2;
+  }
+
+  /* ── Section header ── */
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  /* ── About ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 18px;
+  }
+
+  .about-text p strong { color: var(--text-primary); font-weight: 500; }
+
+  .about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .tag {
+    padding: 5px 12px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .tag:hover { border-color: var(--border-hover); color: var(--text-primary); }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat-card {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 20px;
+    transition: box-shadow 0.2s;
+  }
+
+  .stat-card:hover { box-shadow: var(--shadow-md); }
+
+  .stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ── Projects ── */
+  #projects { background: var(--bg-subtle); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .project-card-3 .project-icon { background: #fff7ed; }
+  .project-card-3 .project-tag { color: #d97706; background: #fff7ed; }
+  .project-card-3 .highlight-dot { background: #d97706; }
+  .project-card-3 .project-link-filled {
+    background: #d97706;
+    border-color: #d97706;
+  }
+  .project-card-3 .project-link-filled:hover {
+    background: #b45309;
+    border-color: #b45309;
+  }
+
+  .project-card-4 .project-icon { background: #f0fdf4; }
+  .project-card-4 .project-tag { color: #16a34a; background: #f0fdf4; }
+  .project-card-4 .highlight-dot { background: #16a34a; }
+  .project-card-4 .project-link-filled {
+    background: #16a34a;
+    border-color: #16a34a;
+  }
+  .project-card-4 .project-link-filled:hover {
+    background: #15803d;
+    border-color: #15803d;
+  }
+
+  .project-card-5 .project-icon { background: #fef2f2; }
+  .project-card-5 .project-tag { color: #dc2626; background: #fef2f2; }
+  .project-card-5 .highlight-dot { background: #dc2626; }
+  .project-card-5 .project-link-filled {
+    background: #dc2626;
+    border-color: #dc2626;
+  }
+  .project-card-5 .project-link-filled:hover {
+    background: #b91c1c;
+    border-color: #b91c1c;
+  }
+
+  .game-preview {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #1a2a1a;
+    aspect-ratio: 900 / 543;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .game-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .game-preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.3);
+    font-size: 13px;
+  }
+
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+  }
+
+  .project-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .project-card-2 .project-icon {
+    background: #f3f0ff;
+  }
+
+  .project-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .project-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .project-card-2 .project-tag {
+    color: #7c3aed;
+    background: #f3f0ff;
+  }
+
+  .project-name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+
+  .project-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+    padding: 16px;
+    background: var(--bg-subtle);
+    border-radius: 8px;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .highlight-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .project-card-2 .highlight-dot { background: #7c3aed; }
+
+  .project-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    background: var(--bg);
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .project-link:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-subtle);
+  }
+
+  .project-link-filled {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  .project-link-filled:hover {
+    background: #1447c0;
+    border-color: #1447c0;
+  }
+
+  .project-card-2 .project-link-filled {
+    background: #7c3aed;
+    border-color: #7c3aed;
+  }
+
+  .project-card-2 .project-link-filled:hover {
+    background: #6d28d9;
+    border-color: #6d28d9;
+  }
+
+  /* ── Contact ── */
+  .contact-inner {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 64px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .contact-heading {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .contact-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    text-decoration: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+    min-width: 240px;
+  }
+
+  .contact-item:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .contact-item svg { color: var(--text-tertiary); flex-shrink: 0; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-tertiary);
+  }
+
+  /* ── Fade in ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .container { padding: 0 24px; }
+    footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-avatar { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; padding: 36px 24px; }
+    .contact-actions { flex-direction: row; flex-wrap: wrap; }
+    .contact-item { min-width: unset; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo">王俊凯</div>
+  <ul class="nav-links">
+    <li><a href="#about">关于我</a></li>
+    <li><a href="#projects">作品集</a></li>
+    <li><a href="#contact">联系我</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<div class="container">
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-label">AI Product Manager</div>
+      <h1 class="hero-name">王俊凯</h1>
+      <p class="hero-title">
+        <strong>技术 × 商业</strong> &nbsp;—&nbsp; AI 产品经理
+      </p>
+      <p class="hero-desc">
+        专注于 AI 原生产品设计与落地，擅长将大模型能力转化为真实商业价值。
+        兼具产品思维与技术理解，做得了 Agent 工作流，写得了产品文档。
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          查看作品集
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-secondary">联系我</a>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <img src="avatar.png" alt="王俊凯" onerror="this.parentElement.innerHTML='👨‍💻'">
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- About -->
+<div class="container">
+  <section id="about">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">关于我</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>
+          我是 <strong>王俊凯</strong>，一名 AI 产品经理，相信 AI 不只是工具，
+          更是重新定义产品形态的机会。
+        </p>
+        <p>
+          我的优势在于<strong>技术与商业的双向理解</strong>——能够深入 Agent
+          工作流的架构细节，也能从用户视角和商业目标出发，定义真正有价值的产品。
+        </p>
+        <p>
+          目前专注于 <strong>AI Agent 应用</strong> 领域，探索大模型在
+          B 端场景下的实际落地路径。
+        </p>
+        <div class="about-tags">
+          <span class="tag">AI Agent</span>
+          <span class="tag">Dify</span>
+          <span class="tag">Claude</span>
+          <span class="tag">产品设计</span>
+          <span class="tag">工作流编排</span>
+          <span class="tag">B 端产品</span>
+          <span class="tag">大模型应用</span>
+        </div>
+      </div>
+      <div class="about-stats fade-in">
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label">落地 AI 产品项目</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Dual</div>
+          <div class="stat-label">双 Agent 架构设计经验</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">全栈</div>
+          <div class="stat-label">从需求到工作流端到端交付</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">AI</div>
+          <div class="stat-label">原生产品构建能力</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- Projects -->
+<div id="projects">
+  <div class="container">
+    <section style="padding: 96px 0;">
+      <div class="section-header fade-in">
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-title">作品集</h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card project-card-1 fade-in">
+          <div class="project-icon">🤖</div>
+          <div class="project-tags">
+            <span class="project-tag">AI Agent</span>
+            <span class="project-tag">销售培训</span>
+            <span class="project-tag">Dify</span>
+          </div>
+          <h3 class="project-name">艾斯小特销售陪练</h3>
+          <p class="project-desc">
+            AI 陪练助手，模拟不同国家、不同类型厂商、不同性格客户的实际谈单情景，
+            解决传统销售培训时间长、效果差的痛点。
+          </p>
+          <div class="project-highlights">
+            <div class="highlight-item">
+              <div class="highlight-dot"></div>
+              <span>双 Agent 架构：角色扮演 Agent + 评估反馈 Agent 协同工作</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-dot"></div>
+              <span>多维客户建模：覆盖国家、行业、性格等多维度画像</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-dot"></div>
+              <span>完整产品文档：从需求分析到工作流落地全程自主交付</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://acnt4uecycar.feishu.cn/wiki/DG8fw5UOJiy5xlkKDducoF8FnFd?from=from_copylink" target="_blank" class="project-link project-link-filled">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              产品文档
+            </a>
+            <a href="https://cloud.dify.ai/app/14e09376-90d6-4486-874d-6c793b6e8252/workflow" target="_blank" class="project-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              工作流 Demo 1
+            </a>
+            <a href="https://cloud.dify.ai/app/2e193e0d-2a5c-46f3-80c2-52811f2c8c97/workflow" target="_blank" class="project-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              工作流 Demo 2
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card project-card-2 fade-in">
+          <div class="project-icon">🪐</div>
+          <div class="project-tags">
+            <span class="project-tag">桌面宠物</span>
+            <span class="project-tag">Claude</span>
+            <span class="project-tag">AI 陪伴</span>
+          </div>
+          <h3 class="project-name">克拉星球</h3>
+          <p class="project-desc">
+            基于 Claude 开发的桌面宠物，以像素风小角色为载体，
+            辅助用户使用 Claude Code，同时支持日常闲聊——萌萌的，有温度的 AI 同伴。
+          </p>
+          <div class="project-highlights">
+            <div class="highlight-item">
+              <div class="highlight-dot"></div>
+              <span>Claude 驱动：深度集成 Claude API，具备上下文记忆能力</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-dot"></div>
+              <span>Claude Code 助手：辅助用户完成代码任务，降低使用门槛</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-dot"></div>
+              <span>像素宠物形象：丰富的表情动作，让 AI 交互更有温度</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="alien_page v2.0(1).html" target="_blank" class="project-link project-link-filled">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              查看 Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card project-card-3 fade-in" style="grid-column: 1 / -1;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+            <div>
+              <div class="project-icon">📎</div>
+              <div class="project-tags">
+                <span class="project-tag">AI 组织</span>
+                <span class="project-tag">Multi-Agent</span>
+                <span class="project-tag">知识分享</span>
+              </div>
+              <h3 class="project-name">Paperclip</h3>
+              <p class="project-desc">
+                不是多一个 Agent，而是变成了有组织的 AI。Paperclip 探索 AI 从单点工具进化为
+                协同作战的 Agent 组织的新范式——让 AI 持续运行、分工协作，真正释放大模型的生产力上限。
+              </p>
+              <div class="project-links">
+                <a href="paperclip-vibe-page.html" target="_blank" class="project-link project-link-filled">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  查看课件
+                </a>
+              </div>
+            </div>
+            <div class="project-highlights" style="align-self:center;margin-bottom:0;">
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <span>协同作战：多个 Agent 分工明确，像组织一样高效运转</span>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <span>持续运行：不依赖单次对话，Agent 组织可长期自主执行任务</span>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <span>范式转变：从"用 AI"到"拥有一支 AI 团队"的思维跃迁</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Game -->
+        <div class="project-card project-card-4 fade-in" style="grid-column: 1 / -1;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+            <div>
+              <div class="project-icon">🎮</div>
+              <div class="project-tags">
+                <span class="project-tag">网页游戏</span>
+                <span class="project-tag">双人对战</span>
+                <span class="project-tag">Vibe Coding</span>
+              </div>
+              <h3 class="project-name">职场大作战</h3>
+              <p class="project-desc">
+                一款职场题材的双人对战格斗游戏。扮演程序员、设计师、项目经理或销售专员，
+                在开放式办公区、会议室等职场场景中展开激烈对决，用技能和策略击败对手。
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <div class="highlight-dot"></div>
+                  <span>4 种职业角色：各有专属技能与克制关系，策略深度足</span>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-dot"></div>
+                  <span>3 种游戏模式：双人对战、单人 vs AI、生存挑战（vs 年终 BOSS）</span>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-dot"></div>
+                  <span>场景加成机制：不同职场场地对不同职业有差异化增益</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <a href="workplace-battle.html" target="_blank" class="project-link project-link-filled">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  开始游戏
+                </a>
+              </div>
+            </div>
+            <div class="game-preview">
+              <img src="game-preview.png" alt="职场大作战游戏截图"
+                onerror="this.parentElement.innerHTML='<div class=\'game-preview-placeholder\'><span style=\'font-size:32px\'>🎮</span><span>游戏截图</span></div>'">
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: AI Roundtable -->
+        <div class="project-card project-card-5 fade-in" style="grid-column: 1 / -1;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+            <div class="game-preview" style="aspect-ratio: 4 / 3;">
+              <img src="ai-roundtable-preview.png" alt="AI 圆桌会议产品截图">
+            </div>
+            <div>
+              <div class="project-icon">🧠</div>
+              <div class="project-tags">
+                <span class="project-tag">Multi-Agent</span>
+                <span class="project-tag">深度思考</span>
+                <span class="project-tag">本地大模型</span>
+              </div>
+              <h3 class="project-name">AI 圆桌会议</h3>
+              <p class="project-desc">
+                用 AI 模拟三位大师进行多视角讨论，辅助用户思考与复盘。
+                解决用户独自思考时容易陷入单一视角、思维盲区的局限性，让一次反思获得三种维度的反馈。
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <div class="highlight-dot"></div>
+                  <span>三位大师 Agent：查理·芒格、阿德勒、卡帕西，风格鲜明、各有所长</span>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-dot"></div>
+                  <span>三层思维框架：分析层（理性决策）、心理层（动机洞察）、系统层（结构思考）</span>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-dot"></div>
+                  <span>本地化部署：基于 Ollama 本地大模型 + Electron，隐私数据不出端</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <a href="http://localhost:5173" target="_blank" class="project-link project-link-filled">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  了解更多
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Contact -->
+<div class="container">
+  <section id="contact">
+    <div class="contact-inner fade-in">
+      <div>
+        <div class="section-eyebrow" style="margin-bottom:12px;">Contact</div>
+        <h3 class="contact-heading">一起构建 AI 原生产品</h3>
+        <p class="contact-desc">
+          无论是求职机会、项目合作，还是对 AI 产品的探讨，都欢迎联系我。
+        </p>
+      </div>
+      <div class="contact-actions">
+        <a href="mailto:2276696388@qq.com" class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          2276696388@qq.com
+        </a>
+        <a href="tel:13915724587" class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          139 1572 4587
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer>
+  <span>© 2026 王俊凯</span>
+  <span>AI Product Manager</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

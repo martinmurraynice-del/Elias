@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paperclip — AI 组织化协作的新范式</title>
+<style>
+  :root {
+    --primary: #00E570;
+    --primary-light: #4DFF9E;
+    --accent: #F59E0B;
+    --accent2: #10B981;
+    --accent3: #EF4444;
+    --dark: #0F0A1E;
+    --card: #1A1233;
+    --card2: #1E1640;
+    --border: rgba(0,229,112,0.25);
+    --text: #E2D9F3;
+    --muted: #9CA3AF;
+    --tag-bg: rgba(0,229,112,0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  a { color: var(--primary-light); text-decoration: none; }
+
+  /* ─── Header ─── */
+  .hero {
+    background: linear-gradient(135deg, #0F0A1E 0%, #1A0A3E 50%, #0A1628 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,229,112,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--primary-light);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #fff 0%, #4DFF9E 60%, #00E570 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+    max-width: 700px;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 600px;
+    margin-bottom: 28px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #9CA3AF;
+  }
+  .hero-meta-item .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+
+  /* ─── Layout ─── */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px;
+  }
+  .section {
+    margin-bottom: 56px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .section-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ─── Key Metrics ─── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .metric-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .metric-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+  }
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .metric-card.green::before  { background: linear-gradient(90deg, #00E570, #4DFF9E); }
+  .metric-card.blue::before   { background: linear-gradient(90deg, #3B82F6, #60A5FA); }
+  .metric-card.amber::before  { background: linear-gradient(90deg, #F59E0B, #FCD34D); }
+  .metric-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .metric-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-value span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .metric-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ─── Two-col layout ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .two-col { grid-template-columns: 1fr; }
+    .container { padding: 24px 20px; }
+    .hero { padding: 40px 20px 32px; }
+    .hero h1 { font-size: 26px; }
+  }
+
+  /* ─── Card ─── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-content {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ─── Illustration ─── */
+  .illustration {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .illustration svg {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* ─── Summary Banner ─── */
+  .summary-banner {
+    background: linear-gradient(135deg, rgba(0,229,112,0.15) 0%, rgba(16,185,129,0.08) 100%);
+    border: 1px solid rgba(0,229,112,0.3);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 32px;
+  }
+  .summary-banner h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .summary-list { list-style: none; }
+  .summary-list li {
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .summary-list li::before {
+    content: '▸';
+    color: var(--primary-light);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .highlight-text { color: #4DFF9E; font-weight: 600; }
+  .highlight-green { color: #34D399; font-weight: 600; }
+  .highlight-amber { color: #FCD34D; font-weight: 600; }
+
+  /* ─── Divider ─── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0,229,112,0.3), transparent);
+    margin: 40px 0;
+  }
+
+  /* ─── Footer ─── */
+  .footer {
+    text-align: center;
+    padding: 32px 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 12px;
+    color: #4B5563;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+  <div class="hero-badge">AI 组织化协作</div>
+  <h1>Paperclip 火，不是因为又多了个 agent<br>而是因为它把 AI 开始做成"组织"</h1>
+  <p>3周 3.8 万 GitHub star，这个增速本身就说明一件事：大家已经不满足于一个能聊天、能写字、能搜资料的 agent 了。真正缺的，是能让多个 agent 稳定分工、持续运转、彼此接力的系统。</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="dot" style="background:#00E570"></div>3.8万 GitHub stars</div>
+    <div class="hero-meta-item"><div class="dot" style="background:#3B82F6"></div>3周内增长</div>
+    <div class="hero-meta-item"><div class="dot" style="background:#F59E0B"></div>Agent 编排系统</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ═══════════ SUMMARY ═══════════ -->
+  <div class="section">
+    <div class="summary-banner">
+      <h3>核心发现 · TL;DR</h3>
+      <ul class="summary-list">
+        <li>Paperclip 把 AI 从"单点调用"往"组织化协作"推了一步</li>
+        <li>它最核心的一层，不是模型，是<strong class="highlight-text">组织结构</strong></li>
+        <li>默认按云端运行来设计，支持 24/7 持续运行</li>
+        <li>把重复工作和能力沉淀拆成两层：<strong class="highlight-green">Routines</strong>（固定流程）和 <strong class="highlight-green">Skills</strong>（能力包）</li>
+        <li>专门做了预算管理：80% 预警，100% 停机</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════ SECTION 1: KEY METRICS ═══════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(0,229,112,0.2);">📊</div>
+      <div>
+        <div class="section-title">一、关键指标</div>
+        <div class="section-sub">Paperclip 的增长与定位</div>
+      </div>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card green">
+        <div class="metric-label">GitHub Stars</div>
+        <div class="metric-value">38,000</div>
+        <div class="metric-desc">3周内快速增长</div>
+      </div>
+      <div class="metric-card blue">
+        <div class="metric-label">产品定位</div>
+        <div class="metric-value">Agent 编排系统</div>
+        <div class="metric-desc">虚拟团队基础设施</div>
+      </div>
+      <div class="metric-card amber">
+        <div class="metric-label">核心价值</div>
+        <div class="metric-value">组织化协作</div>
+        <div class="metric-desc">从单点调用到团队协作</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════ SECTION 2: ORGANIZATION STRUCTURE ═══════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(0,229,112,0.2);">🏗️</div>
+      <div>
+        <div class="section-title">二、组织结构</div>
+        <div class="section-sub">它最核心的一层，不是模型 是组织结构</div>
+      </div>
+    </div>
+
+    <div class="illustration">
+      <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- CEO -->
+        <circle cx="200" cy="60" r="40" stroke="#00E570" stroke-width="2" fill="rgba(26, 18, 51, 0.8)"/>
+        <text x="200" y="55" text-anchor="middle" fill="#00E570" font-weight="bold">CEO</text>
+        <rect x="185" y="45" width="30" height="30" rx="5" stroke="#00E570" stroke-width="2" fill="none"/>
+        <line x1="195" y1="55" x2="205" y2="55" stroke="#00E570" stroke-width="2"/>
+        <line x1="200" y1="50" x2="200" y2="60" stroke="#00E570" stroke-width="2"/>
+        
+        <!-- Lines -->
+        <line x1="200" y1="100" x2="100" y2="160" stroke="#00E570" stroke-width="1" stroke-dasharray="5,5"/>
+        <line x1="200" y1="100" x2="160" y2="160" stroke="#00E570" stroke-width="1" stroke-dasharray="5,5"/>
+        <line x1="200" y1="100" x2="240" y2="160" stroke="#00E570" stroke-width="1" stroke-dasharray="5,5"/>
+        <line x1="200" y1="100" x2="300" y2="160" stroke="#00E570" stroke-width="1" stroke-dasharray="5,5"/>
+        
+        <!-- Content Writer -->
+        <circle cx="100" cy="180" r="30" stroke="#00E570" stroke-width="2" fill="rgba(26, 18, 51, 0.8)"/>
+        <text x="100" y="175" text-anchor="middle" fill="#00E570" font-size="10">Content</text>
+        <text x="100" y="190" text-anchor="middle" fill="#00E570" font-size="10">Writer</text>
+        <path d="M90 170 L95 165 L105 165 L110 170 L105 175 L95 175 Z" fill="#00E570"/>
+        <circle cx="100" cy="170" r="3" fill="#00E570"/>
+        
+        <!-- Content Editor -->
+        <circle cx="160" cy="180" r="30" stroke="#00E570" stroke-width="2" fill="rgba(26, 18, 51, 0.8)"/>
+        <text x="160" y="175" text-anchor="middle" fill="#00E570" font-size="10">Content</text>
+        <text x="160" y="190" text-anchor="middle" fill="#00E570" font-size="10">Editor</text>
+        <circle cx="160" cy="175" r="10" stroke="#00E570" stroke-width="2" fill="none"/>
+        <circle cx="160" cy="175" r="5" stroke="#00E570" stroke-width="2" fill="none"/>
+        
+        <!-- Video Editor -->
+        <circle cx="240" cy="180" r="30" stroke="#00E570" stroke-width="2" fill="rgba(26, 18, 51, 0.8)"/>
+        <text x="240" y="175" text-anchor="middle" fill="#00E570" font-size="10">Video</text>
+        <text x="240" y="190" text-anchor="middle" fill="#00E570" font-size="10">Editor</text>
+        <path d="M230 170 L235 165 L245 165 L250 170 L245 175 L235 175 Z" fill="#00E570"/>
+        <circle cx="240" cy="170" r="3" fill="#00E570"/>
+        
+        <!-- Research Analyst -->
+        <circle cx="300" cy="180" r="30" stroke="#00E570" stroke-width="2" fill="rgba(26, 18, 51, 0.8)"/>
+        <text x="300" y="175" text-anchor="middle" fill="#00E570" font-size="10">Research</text>
+        <text x="300" y="190" text-anchor="middle" fill="#00E570" font-size="10">Analyst</text>
+        <path d="M290 175 L295 170 L305 170 L310 175 L305 180 L295 180 Z" fill="none" stroke="#00E570" stroke-width="2"/>
+        <line x1="295" y1="175" x2="305" y2="175" stroke="#00E570" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔍 工作流程</div>
+      <div class="card-content">
+        <p>它把任务先放进一个共享任务系统里，然后由 CEO agent 负责规划、拆解、委派：</p>
+        <ul style="margin: 12px 0; padding-left: 20px;">
+          <li>Researcher 负责找资料</li>
+          <li>Writer 负责起草</li>
+          <li>Editor 负责修改和收口</li>
+        </ul>
+        <p>这套东西值钱的地方，不是"多几个角色"这么简单。而是它开始模拟真实团队里最重要的那件事：任务不是一次性 prompt 打完，而是有人负责判断、有人负责执行、有人负责复核，中间还能回流、重派、继续推进。</p>
+        <p>这比"一个超级 agent 包打天下"更接近真实生产。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════ SECTION 3: CLOUD NATIVE ═══════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(59,130,246,0.2);">☁️</div>
+      <div>
+        <div class="section-title">三、云端运行设计</div>
+        <div class="section-sub">默认按云端运行来设计，支持 24/7 持续运行</div>
+      </div>
+    </div>
+
+    <div class="illustration">
+      <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cloud -->
+        <path d="M150 100 C150 80 170 60 190 60 C210 60 230 80 230 100 C230 100 250 100 250 120 C250 140 230 160 210 160 C190 160 170 140 170 120 C170 120 150 120 150 100 Z" stroke="#00E570" stroke-width="2" fill="rgba(26, 18, 51, 0.8)"/>
+        
+        <!-- Paperclip -->
+        <path d="M200 80 C190 80 180 90 180 100 C180 110 190 120 200 120 C210 120 220 110 220 100 C220 90 210 80 200 80 Z" stroke="#00E570" stroke-width="2" fill="none"/>
+        <path d="M190 100 L210 100" stroke="#00E570" stroke-width="2"/>
+        
+        <!-- Server 1 -->
+        <rect x="160" y="170" width="80" height="40" rx="5" stroke="#00E570" stroke-width="2" fill="rgba(26, 18, 51, 0.8)"/>
+        <circle cx="175" cy="180" r="3" fill="#00E570"/>
+        <circle cx="190" cy="180" r="3" fill="#00E570"/>
+        <rect x="205" y="178" width="20" height="4" rx="2" fill="#00E570"/>
+        
+        <!-- Server 2 -->
+        <rect x="160" y="220" width="80" height="40" rx="5" stroke="#00E570" stroke-width="2" fill="rgba(26, 18, 51, 0.8)"/>
+        <circle cx="175" cy="230" r="3" fill="#00E570"/>
+        <circle cx="190" cy="230" r="3" fill="#00E570"/>
+        <rect x="205" y="228" width="20" height="4" rx="2" fill="#00E570"/>
+        
+        <!-- VPS Text -->
+        <text x="200" y="270" text-anchor="middle" fill="#00E570" font-weight="bold">VPS</text>
+      </svg>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🌐 24/7 持续运行</div>
+      <div class="card-content">
+        <p>24/7 持续跑，意味着它不是把 agent 绑死在你本地电脑上。你关机、睡觉、合上笔记本，它还能继续推进任务。</p>
+        <p>这件事看起来像部署细节，其实是 agent 从"演示玩具"进入"工作流基础设施"的分水岭。</p>
+        <p>因为很多人嘴上说自己在用 agent，实际跑的还是一个会话级玩具：网页一关，流程就断；电脑一睡，任务就停；上下文一丢，又得重来。</p>
+        <p>Paperclip 至少在方向上，把这个问题正面解决了。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════ SECTION 4: ROUTINES & SKILLS ═══════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(245,158,11,0.2);">⚙️</div>
+      <div>
+        <div class="section-title">四、Routines & Skills</div>
+        <div class="section-sub">把重复工作和能力沉淀拆成了两层</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">🔄 Routines</div>
+        <div class="card-content">
+          <p>固定自动流程。适合那些你已经知道顺序、想反复执行的工作。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🧰 Skills</div>
+        <div class="card-content">
+          <p>能力包。更像把某类专长封装起来，随时给 agent 调用。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px;">
+      <div class="card-title">🎯 设计意义</div>
+      <div class="card-content">
+        <p>这个设计很重要。因为 agent 真正要进入生产，不可能每次都从 prompt 重新发明一遍流程。你一定需要：</p>
+        <ul style="margin: 12px 0; padding-left: 20px;">
+          <li>把稳定步骤沉淀成 routine</li>
+          <li>把高复用能力沉淀成 skill</li>
+          <li>最后让不同 agent 在统一系统里编排调用</li>
+        </ul>
+        <p>这已经不是"会不会用 AI"的问题了。这是有没有在搭一套可复用的 AI 生产系统。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════ SECTION 5: BUDGET CONTROL ═══════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(239,68,68,0.2);">💰</div>
+      <div>
+        <div class="section-title">五、预算控制</div>
+        <div class="section-sub">专门做了预算管理：80% 预警，100% 停机</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⚠️ 成本控制</div>
+      <div class="card-content">
+        <p>Paperclip 不是只强调自动化，还专门做了预算管理：80% 预警，100% 停机。</p>
+        <p>这个细节看起来不性感，但很基础设施。</p>
+        <p>因为多 agent 系统一旦进入长流程、云端持续运行、角色反复协作，成本失控不是小概率事件，而是默认风险。能不能把预算当成系统的一等公民，决定了它更像一个 demo，还是更像一个能进生产环境的框架。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════ SECTION 6: CONCLUSION ═══════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(0,229,112,0.2);">📝</div>
+      <div>
+        <div class="section-title">六、结论</div>
+        <div class="section-sub">Paperclip 的价值与边界</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎯 核心价值</div>
+      <div class="card-content">
+        <p>它真正的价值，不是再证明"agent 很厉害"而是把 AI 往"组织系统"推进了一步。</p>
+        <p>过去很多 agent 产品，本质上还是单兵作战。Paperclip 开始讨论的是：怎么建共享任务层，怎么做角色分工，怎么做作委派链路，怎么让流程脱离本地机器持续运行，怎么把 routine、skill、预算一起纳入系统设计。</p>
+        <p>这才是接下来 agent 竞争会越来越真实的地方。</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px;">
+      <div class="card-title">⚡ 边界与挑战</div>
+      <div class="card-content">
+        <p>但我也同意它最大的边界：</p>
+        <p>如果单 agent 都没跑顺，你直接上多 agent，最后大概率不是效率翻倍，而是把混乱放大。</p>
+        <p>一个烂流程，不会因为多加几个 agent 就自动变好，只会变成更贵、更慢、更难排查。</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px;">
+      <div class="card-title">💡 普通人的视角</div>
+      <div class="card-content">
+        <p>所以普通人看这类产品，别只盯着"多智能体协作"这几个字兴奋。真正该看的，是三件事：</p>
+        <p>第一，你的单点任务到底有没有稳定跑通。第二，你的任务有没有清晰到可以拆给不同角色。第三，你有没有长期运行、预算控制、复用能力沉淀的需求</p>
+        <p>如果这三件事都没有，那你现在用它，更多是感受方向。</p>
+        <p>如果这三件事已经开始出现，那 Paperclip 这类系统，就不是玩具了。它更像下一代 AI 工作流的底层雏形。</p>
+        <p>我自己的结论很直接：</p>
+        <p>2026 年再看 agent，重点已经不是"谁更像人聊天"。而是谁先把 AI 做成一个能分工、能委派、能持续运转、能控成本的组织系统</p>
+        <p>Paperclip 这次火，火在这里</p>
+        <p>最小可执行动作也很简单：</p>
+        <p>别急着一上来搭多 agent。先拿你一个已经跑顺的单 agent 流程，看看哪些环节可以拆成 Researcher / Writer / Editor，再看是否真的需要一个 CEO agent 去统一调度。</p>
+        <p>顺序别反了</p>
+        <p>因为单 agent 没跑顺时，多 agent 不是升级，只是更贵的混乱</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>© 2026 Paperclip 分析报告 | Vibe Coding 风格</p>
+</div>
+
+</body>
+</html>
