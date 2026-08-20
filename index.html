@@ -484,6 +484,77 @@
 
   .project-links-line a:hover { gap: 10px; }
 
+  .novel-result {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 20px;
+    align-items: stretch;
+    margin-top: 8px;
+    padding: 20px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .novel-cover {
+    min-height: 152px;
+    padding: 14px;
+    background: #161616;
+    color: #f4f1ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .novel-cover-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e55331;
+  }
+
+  .novel-cover-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .novel-cover-foot {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .novel-result-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .novel-result-kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .novel-result-title {
+    margin-top: 4px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .novel-result-meta,
+  .novel-result-desc {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
   /* ── Contact ── */
   #contact {
     background: var(--ink);
@@ -574,6 +645,9 @@
     .hero-cta { text-align: left; align-items: flex-start; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .projects-grid { grid-template-columns: 1fr; gap: 40px; }
+    .novel-result { grid-template-columns: 92px 1fr; gap: 16px; }
+    .novel-cover { min-height: 128px; padding: 11px; }
+    .novel-cover-title { font-size: 26px; }
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     footer { flex-direction: column; gap: 12px; text-align: center; }
   }
@@ -893,6 +967,25 @@
       </ul>
       <div class="project-links-line">
         <a href="http://localhost:4173" target="_blank">本地体验 →</a>
+      </div>
+      <div class="novel-result">
+        <div class="novel-cover" aria-hidden="true">
+          <span class="novel-cover-label">NarrativeOS Original</span>
+          <strong class="novel-cover-title">星<br>烬</strong>
+          <span class="novel-cover-foot">SCI-FI NOVEL · 2026</span>
+        </div>
+        <div class="novel-result-body">
+          <div>
+            <div class="novel-result-kicker">Generated Work / 创作成果</div>
+            <h4 class="novel-result-title">《星烬》</h4>
+            <p class="novel-result-meta">约 28 万字 · 3 卷 · 84 章</p>
+          </div>
+          <p class="novel-result-desc">一部长篇科幻小说，故事从火星第七层的野收人孙许可与一枚神秘坠落物展开。</p>
+          <div class="project-links-line">
+            <a href="xingjin-reader.html" target="_blank">在线阅读 →</a>
+            <a href="xingjin.txt" download>下载 TXT →</a>
+          </div>
+        </div>
       </div>
     </article>
 

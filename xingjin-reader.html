@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="《星烬》在线阅读，叙界 NarrativeOS 创作成果。">
+  <title>星烬 — 叙界 NarrativeOS 创作成果</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&amp;family=Noto+Serif+SC:wght@400;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f1eee8;
+      --surface: #f8f6f1;
+      --ink: #191919;
+      --soft: #645f59;
+      --line: #d4cfc6;
+      --accent: #c3482d;
+      --sidebar: 300px;
+      --reading-size: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+    }
+
+    body.dark {
+      --paper: #151515;
+      --surface: #1c1c1c;
+      --ink: #e9e4dc;
+      --soft: #aaa39a;
+      --line: #373532;
+      --accent: #e66b4e;
+    }
+
+    button, select { font: inherit; }
+    button { color: inherit; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      height: 64px;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand strong {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 19px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      font-family: 'Space Mono', monospace;
+      color: var(--soft);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .toolbar { display: flex; align-items: center; gap: 8px; }
+    .tool {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .tool:hover { background: var(--surface); border-color: var(--ink); }
+    .menu-button { display: none; }
+
+    .sidebar {
+      position: fixed;
+      z-index: 15;
+      top: 64px;
+      bottom: 0;
+      left: 0;
+      width: var(--sidebar);
+      border-right: 1px solid var(--line);
+      background: var(--surface);
+      overflow: auto;
+      padding: 24px 18px 40px;
+    }
+
+    .book-meta { padding: 0 8px 20px; border-bottom: 1px solid var(--line); }
+    .book-label {
+      font-family: 'Space Mono', monospace;
+      color: var(--accent);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .book-title { margin: 8px 0 4px; font: 700 32px/1.2 'Noto Serif SC', serif; }
+    .book-stats { color: var(--soft); font-size: 12px; }
+
+    .chapter-select {
+      width: 100%;
+      margin: 18px 0 12px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      outline: none;
+    }
+
+    .toc { display: grid; gap: 2px; }
+    .toc-volume {
+      margin: 16px 8px 6px;
+      color: var(--soft);
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .toc-button {
+      width: 100%;
+      padding: 9px 10px;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      color: var(--soft);
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .toc-button:hover, .toc-button.active { background: var(--paper); color: var(--ink); }
+    .toc-button.active { box-shadow: inset 2px 0 var(--accent); }
+
+    main { margin-left: var(--sidebar); padding: 112px 40px 72px; }
+    .reader { width: min(100%, 760px); margin: 0 auto; }
+
+    .chapter-kicker {
+      margin-bottom: 12px;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .chapter-title {
+      margin: 0 0 52px;
+      font: 700 clamp(30px, 5vw, 46px)/1.25 'Noto Serif SC', serif;
+      letter-spacing: 0;
+    }
+
+    .chapter-content { font: 400 var(--reading-size)/2 'Noto Serif SC', serif; }
+    .chapter-content p { margin: 0 0 1.2em; text-indent: 2em; }
+    .chapter-content p:first-child { text-indent: 0; }
+    .loading, .error { color: var(--soft); font-size: 14px; }
+    .error { color: var(--accent); }
+
+    .chapter-nav {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .nav-button {
+      min-height: 48px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor: pointer;
+    }
+    .nav-button:hover:not(:disabled) { border-color: var(--ink); background: var(--surface); }
+    .nav-button:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    .overlay { display: none; }
+
+    @media (max-width: 760px) {
+      .topbar { height: 58px; padding: 0 14px; }
+      .brand span { display: none; }
+      .menu-button { display: grid; }
+      .sidebar {
+        top: 58px;
+        width: min(88vw, 320px);
+        transform: translateX(-102%);
+        transition: transform 0.25s ease;
+      }
+      body.menu-open .sidebar { transform: translateX(0); }
+      .overlay {
+        position: fixed;
+        z-index: 10;
+        inset: 58px 0 0;
+        background: rgba(0,0,0,0.35);
+      }
+      body.menu-open .overlay { display: block; }
+      main { margin-left: 0; padding: 94px 20px 52px; }
+      .chapter-title { margin-bottom: 36px; }
+      .chapter-content { line-height: 1.9; }
+      .chapter-nav { margin-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <strong>《星烬》</strong>
+      <span>叙界 NarrativeOS 创作成果</span>
+    </div>
+    <div class="toolbar" aria-label="阅读设置">
+      <button class="tool menu-button" id="menuButton" type="button" title="目录" aria-label="打开目录">☰</button>
+      <button class="tool" id="fontDown" type="button" title="减小字号" aria-label="减小字号">A−</button>
+      <button class="tool" id="fontUp" type="button" title="增大字号" aria-label="增大字号">A+</button>
+      <button class="tool" id="themeButton" type="button" title="切换主题" aria-label="切换深浅主题">◐</button>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="book-meta">
+      <div class="book-label">NarrativeOS Original</div>
+      <h1 class="book-title">星烬</h1>
+      <div class="book-stats">约 28 万字 · 3 卷 · 84 章</div>
+    </div>
+    <select class="chapter-select" id="chapterSelect" aria-label="选择章节"></select>
+    <nav class="toc" id="toc" aria-label="章节目录"></nav>
+  </aside>
+  <button class="overlay" id="overlay" type="button" aria-label="关闭目录"></button>
+
+  <main>
+    <article class="reader">
+      <div class="chapter-kicker" id="chapterKicker">Loading / 正在载入</div>
+      <h2 class="chapter-title" id="chapterTitle">《星烬》</h2>
+      <div class="chapter-content" id="chapterContent">
+        <p class="loading">正在载入正文……</p>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-button" id="previousButton" type="button">← 上一章</button>
+        <button class="nav-button" id="nextButton" type="button">下一章 →</button>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const state = { chapters: [], current: 0, fontSize: 18 };
+    const elements = {
+      title: document.getElementById('chapterTitle'),
+      kicker: document.getElementById('chapterKicker'),
+      content: document.getElementById('chapterContent'),
+      toc: document.getElementById('toc'),
+      select: document.getElementById('chapterSelect'),
+      previous: document.getElementById('previousButton'),
+      next: document.getElementById('nextButton')
+    };
+
+    function parseNovel(text) {
+      const lines = text.replace(/\r/g, '').split('\n');
+      const chapters = [];
+      let volume = '';
+      let active = null;
+
+      lines.forEach((rawLine) => {
+        const line = rawLine.trim();
+        if (/^第\s*\d+\s*卷/.test(line)) {
+          volume = line.replace(/\s+/g, ' ');
+          return;
+        }
+        if (/^第\s*\d+\s*章/.test(line)) {
+          if (active) chapters.push(active);
+          active = { title: line.replace(/\s+/g, ' '), volume, paragraphs: [] };
+          return;
+        }
+        if (active && line) active.paragraphs.push(line);
+      });
+      if (active) chapters.push(active);
+      return chapters.map((chapter) => {
+        if (/^第[一二三四五六七八九十百零〇两]+章/.test(chapter.paragraphs[0] || '')) {
+          chapter.paragraphs.shift();
+        }
+        return chapter;
+      });
+    }
+
+    function renderDirectory() {
+      let lastVolume = '';
+      state.chapters.forEach((chapter, index) => {
+        if (chapter.volume && chapter.volume !== lastVolume) {
+          const label = document.createElement('div');
+          label.className = 'toc-volume';
+          label.textContent = chapter.volume;
+          elements.toc.appendChild(label);
+          lastVolume = chapter.volume;
+        }
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'toc-button';
+        button.textContent = chapter.title;
+        button.addEventListener('click', () => showChapter(index));
+        elements.toc.appendChild(button);
+
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = chapter.title;
+        elements.select.appendChild(option);
+      });
+    }
+
+    function showChapter(index, updateHash = true) {
+      if (!state.chapters[index]) return;
+      state.current = index;
+      const chapter = state.chapters[index];
+      elements.kicker.textContent = chapter.volume || '《星烬》';
+      elements.title.textContent = chapter.title;
+      elements.content.replaceChildren();
+      chapter.paragraphs.forEach((text) => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = text;
+        elements.content.appendChild(paragraph);
+      });
+      elements.previous.disabled = index === 0;
+      elements.next.disabled = index === state.chapters.length - 1;
+      elements.select.value = String(index);
+      document.querySelectorAll('.toc-button').forEach((button, buttonIndex) => {
+        button.classList.toggle('active', buttonIndex === index);
+      });
+      if (updateHash) history.replaceState(null, '', `#chapter-${index + 1}`);
+      document.body.classList.remove('menu-open');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    async function loadNovel() {
+      try {
+        const response = await fetch('xingjin.txt');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        state.chapters = parseNovel(await response.text());
+        if (!state.chapters.length) throw new Error('未识别到章节');
+        renderDirectory();
+        const requested = Number(location.hash.match(/chapter-(\d+)/)?.[1] || 1) - 1;
+        showChapter(Math.min(Math.max(requested, 0), state.chapters.length - 1), false);
+      } catch (error) {
+        elements.kicker.textContent = 'Load Error';
+        elements.title.textContent = '正文载入失败';
+        elements.content.innerHTML = '<p class="error">请通过个人网站在线打开阅读页，或直接下载 TXT 文件阅读。</p>';
+      }
+    }
+
+    elements.previous.addEventListener('click', () => showChapter(state.current - 1));
+    elements.next.addEventListener('click', () => showChapter(state.current + 1));
+    elements.select.addEventListener('change', (event) => showChapter(Number(event.target.value)));
+    document.getElementById('menuButton').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+    document.getElementById('overlay').addEventListener('click', () => document.body.classList.remove('menu-open'));
+    document.getElementById('fontDown').addEventListener('click', () => {
+      state.fontSize = Math.max(15, state.fontSize - 1);
+      document.documentElement.style.setProperty('--reading-size', `${state.fontSize}px`);
+    });
+    document.getElementById('fontUp').addEventListener('click', () => {
+      state.fontSize = Math.min(24, state.fontSize + 1);
+      document.documentElement.style.setProperty('--reading-size', `${state.fontSize}px`);
+    });
+    document.getElementById('themeButton').addEventListener('click', () => document.body.classList.toggle('dark'));
+
+    loadNovel();
+  </script>
+</body>
+</html>
