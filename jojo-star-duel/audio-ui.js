@@ -21,7 +21,8 @@
       const superCue=cue==='superStart'||cue==='superRush',rule=g?.profile(cue),timeline=superCue?g?.superTimelineFor?.(id):null;
       const duration=superCue?timeline?.duration
         :skills.has(cue)&&rule?rule.startup+rule.active+rule.recovery:0;
-      const sequence=superCue&&timeline?` · 前摇固定 1 秒 · ${timeline.voice?.rushStart!=null?'配音原速顺接':'召唤原声延续至攻击'}`:'';
+      const startup=timeline?.starts?.rush;
+      const sequence=superCue&&Number.isFinite(startup)?` · 前摇固定 ${Number(startup.toFixed(2))} 秒 · ${timeline.voice?.rushStart!=null?'配音原速顺接':'召唤原声延续至攻击'}`:'';
       timing.textContent=imported?(duration?`本地台词已替换 · 招式演出 ${duration.toFixed(2)} 秒`:'本地台词已替换')
         :recorded?`${Number.isFinite(entry.duration)?`录音 ${entry.duration.toFixed(2)} 秒`:'已收录原声'}${duration?` · ${superCue?'完整必杀':'招式演出'} ${duration.toFixed(2)} 秒`:''}`:'';
       if(timing.textContent)timing.textContent+=sequence;

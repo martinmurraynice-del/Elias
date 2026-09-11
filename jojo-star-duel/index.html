@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#17121e">
   <title>JOJO · 星尘对决</title>
-  <link rel="stylesheet" href="style.css?v=jojo-startup-41">
+  <link rel="stylesheet" href="style.css?v=jojo-startup-42">
 </head>
 <body>
   <header>
@@ -81,7 +81,7 @@
           <div><h3>战斗配乐</h3><p>唯一背景音乐：菅野祐悟《スターダストクルセイダース》官方发行版。</p>
             <p>开始对战并启用声音后自动连接。若浏览器未允许播放，请点击下方播放器的“播放官方配乐”。</p>
           </div>
-          <div><h3>角色喊招</h3><p>六位角色已接入日语台词录音。新增黄金体验、杀手皇后、天堂制造与轰炸空间的召唤和招式喊声。完整必杀固定 1 秒前摇，召唤台词完整播完后再接连打台词。选择角色与台词可逐句试听、查看来源或替换；暂缺的喊声保留战斗音效。素材来自社区剪辑，原集数尚未逐一核对。</p>
+          <div><h3>角色喊招</h3><p>六位角色已接入日语台词录音。新增黄金体验、杀手皇后、天堂制造与轰炸空间的召唤和招式喊声。完整必杀固定 0.3 秒前摇，召唤台词完整播完后再接连打台词。选择角色与台词可逐句试听、查看来源或替换；暂缺的喊声保留战斗音效。素材来自社区剪辑，原集数尚未逐一核对。</p>
             <label class="audio-field">角色与台词<select id="voice-slot"></select></label>
             <div class="audio-actions"><button class="secondary" id="voice-preview">试听这句</button><button class="secondary" id="sfx-preview">试听命中音效</button></div>
             <div class="audio-actions"><label class="audio-file">替换这句台词<input id="voice-file" type="file" accept="audio/*,.mp3,.wav,.ogg,.m4a"></label><button class="secondary" id="voice-reset">恢复默认</button></div><small id="voice-file-label">当前：角色台词录音</small><small id="voice-timing" class="voice-timing"></small><a id="voice-source" class="voice-source" target="_blank" rel="noopener noreferrer">查看这句素材来源 ↗</a>
@@ -96,7 +96,7 @@
         <small id="official-status" aria-live="polite">开始对战后自动连接官方配乐。</small></div><div id="official-player"></div>
     </section>
     <section class="guide">
-      <div><p class="eyebrow">PLAYER 01</p><h3>出拳、侧踢，再重拳收尾。</h3><p>连续按 J：直拳 → 交叉拳 → 抬腿侧踢 → 双击 → 终结重拳。前三段由人物直接出招；可提前连按接招，按住不会自动连打。A / D 决定面向，松开后保持方向；出招朝当前面向发出。连击收尾或必杀命中后，对手会倒地再起身。点击上方「招式演示」可慢放或拖动查看每个姿态。</p><p>K 跳跃，在空中再按一次 K 登上高台；S + K 从平台下落。开阔地面与多层屋顶均可交战，镜头随双方距离自动缩放。</p><p>六位角色的完整必杀均有 1 秒反应窗口。看到「蓄势 · 可打断」后，可以移动、跳跃躲开，或面朝对手按住 S 防守（2P 按 ↓）；在这 1 秒内命中施放者可打断大招。1 秒结束时才检查捕捉，大招收招时也能追击。</p></div>
+      <div><p class="eyebrow">PLAYER 01</p><h3>出拳、侧踢，再重拳收尾。</h3><p>连续按 J：直拳 → 交叉拳 → 抬腿侧踢 → 双击 → 终结重拳。前三段由人物直接出招；可提前连按接招，按住不会自动连打。A / D 决定面向，松开后保持方向；出招朝当前面向发出。连击收尾或必杀命中后，对手会倒地再起身。点击上方「招式演示」可慢放或拖动查看每个姿态。</p><p>K 跳跃，在空中再按一次 K 登上高台；S + K 从平台下落。开阔地面与多层屋顶均可交战，镜头随双方距离自动缩放。</p><p>六位角色的完整必杀均有 0.3 秒反应窗口。看到「蓄势 · 可打断」后，可以移动、跳跃躲开，或面朝对手按住 S 防守（2P 按 ↓）；在这 0.3 秒内命中施放者可打断大招。0.3 秒结束时才检查捕捉，大招收招时也能追击。</p></div>
       <div class="keys"><span><kbd>A</kbd><kbd>D</kbd> 移动</span><span><kbd>S</kbd> 防御</span><span><kbd>J</kbd> 连续普攻</span><span><kbd>K</kbd> 二段跳</span><span><kbd>L</kbd> 方向冲刺</span><span><kbd>U</kbd> 远攻</span><span><kbd>I</kbd> 必杀 · 1 层</span><span><kbd>O</kbd> 援助 · 12 秒</span><span><kbd>S</kbd> + <kbd>O</kbd> 爆气 · 50 气</span></div>
     </section>
     <p class="energy-guide">三层共用能量槽：<b>淡蓝 → 黄色 → 红色</b>，每层 100，最多 300。普攻命中 +12，被格挡 +5；挨打按实际损血的 20% 回能。完整必杀消耗 1 层，爆气消耗半层；其他技能按标注扣气。普通对战开局 0 气，练习模式三层全满。</p>
@@ -136,20 +136,20 @@
       <div class="credits"><span>动画角色原画 · <a href="https://natalie.mu/comic/news/106280" target="_blank" rel="noopener noreferrer">承太郎站姿 ↗</a> · <a href="https://jojo-portal.com/anime/sc/character/01/" target="_blank" rel="noopener noreferrer">白金之星 ↗</a> · <a href="https://jojo-portal.com/anime/sc/character/07/" target="_blank" rel="noopener noreferrer">DIO / 世界 ↗</a></span><span>同人对战原型</span></div>
     </footer>
   </main>
-  <script src="voice-timing.js?v=jojo-startup-41"></script>
-  <script src="combat-geometry.js?v=jojo-startup-41"></script>
-  <script src="stage.js?v=jojo-startup-41"></script>
-  <script src="battle-vfx.js?v=jojo-startup-41"></script>
-  <script src="sprite-data.js?v=jojo-startup-41"></script>
-  <script src="sprite-animation.js?v=jojo-startup-41"></script>
-  <script src="expansion-art.js?v=jojo-startup-41"></script>
-  <script src="fighter-render.js?v=jojo-startup-41"></script>
-  <script src="super-render.js?v=jojo-startup-41"></script>
-  <script src="audio-data.js?v=jojo-startup-41"></script>
-  <script src="audio-engine.js?v=jojo-startup-41"></script>
-  <script src="energy-hud.js?v=jojo-startup-41"></script>
-  <script src="game.js?v=jojo-startup-41"></script>
-  <script src="motion-preview.js?v=jojo-startup-41"></script>
-  <script src="audio-ui.js?v=jojo-startup-41"></script>
+  <script src="voice-timing.js?v=jojo-startup-42"></script>
+  <script src="combat-geometry.js?v=jojo-startup-42"></script>
+  <script src="stage.js?v=jojo-startup-42"></script>
+  <script src="battle-vfx.js?v=jojo-startup-42"></script>
+  <script src="sprite-data.js?v=jojo-startup-42"></script>
+  <script src="sprite-animation.js?v=jojo-startup-42"></script>
+  <script src="expansion-art.js?v=jojo-startup-42"></script>
+  <script src="fighter-render.js?v=jojo-startup-42"></script>
+  <script src="super-render.js?v=jojo-startup-42"></script>
+  <script src="audio-data.js?v=jojo-startup-42"></script>
+  <script src="audio-engine.js?v=jojo-startup-42"></script>
+  <script src="energy-hud.js?v=jojo-startup-42"></script>
+  <script src="game.js?v=jojo-startup-42"></script>
+  <script src="motion-preview.js?v=jojo-startup-42"></script>
+  <script src="audio-ui.js?v=jojo-startup-42"></script>
 </body>
 </html>

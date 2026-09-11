@@ -4,9 +4,9 @@
 // Simulation and effects share these points; camera zoom never changes reach.
 const CombatGeometry = (() => {
   const freeze = value => { Object.values(value).forEach(v => { if (v && typeof v === 'object') freeze(v); }); return Object.freeze(value); };
-  // Every ultimate has the same live one-second opening. Published recording
+  // Every ultimate has the same live 0.3-second opening. Published recording
   // metadata may shape its performance, never the opponent's reaction window.
-  const superStartup = 1;
+  const superStartup = .3;
   const defaultVoiceLengths = Object.freeze({ 'jotaro.superStart': 1.0171428571428571, 'jotaro.superRush': 4.06374149659864,
     'dio.superStart': 1.8546938775510204, 'dio.superRush': 5.015986394557823,
     'jotaro.starAscend': .81, 'jotaro.starCounter': .81, 'dio.timeAmbush': 1.8546938775510204, 'dio.knifeArray': 1.25,
