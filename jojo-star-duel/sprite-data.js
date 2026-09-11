@@ -3,7 +3,7 @@
 // Source PNGs remain unchanged; cross-cell poses use a cached connected-alpha mask.
 const JOJO_SPRITE_CONFIG = Object.freeze({
   "jotaro": {
-    "src": "assets/jojo/generated/jotaro-actions-v1.png",
+    "src": "assets/jojo/generated/jotaro-actions-v1.webp",
     "columns": 4,
     "rows": 4,
     "version": "generated-v1",
@@ -178,7 +178,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       300
     ],
     "motion": {
-      "src": "assets/jojo/generated/jotaro-motion-v2.png",
+      "src": "assets/jojo/generated/jotaro-motion-v2.webp",
       "columns": 4,
       "rows": 4,
       "version": "motion-v2",
@@ -354,7 +354,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     },
     "knockdown": {
-      "src": "assets/jojo/generated/jojo-prone-v1.png",
+      "src": "assets/jojo/generated/jojo-prone-v1.webp",
       "frameCount": 1,
       "columns": 1,
       "rows": 1,
@@ -382,7 +382,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
     }
   },
   "dio": {
-    "src": "assets/jojo/generated/dio-actions-v1.png",
+    "src": "assets/jojo/generated/dio-actions-v1.webp",
     "columns": 4,
     "rows": 4,
     "version": "generated-v1",
@@ -557,7 +557,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       300
     ],
     "motion": {
-      "src": "assets/jojo/generated/dio-motion-v2.png",
+      "src": "assets/jojo/generated/dio-motion-v2.webp",
       "columns": 4,
       "rows": 4,
       "version": "motion-v2",
@@ -733,7 +733,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     },
     "knockdown": {
-      "src": "assets/jojo/generated/jojo-prone-v1.png",
+      "src": "assets/jojo/generated/jojo-prone-v1.webp",
       "frameCount": 1,
       "columns": 1,
       "rows": 1,
@@ -761,7 +761,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
     }
   },
   "giorno": {
-    "src": "assets/jojo/generated/giorno-actions-v1.png",
+    "src": "assets/jojo/generated/giorno-actions-v1.webp",
     "columns": 4,
     "rows": 4,
     "version": "expansion-v1",
@@ -932,7 +932,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     ],
     "motion": {
-      "src": "assets/jojo/generated/giorno-motion-v1.png",
+      "src": "assets/jojo/generated/giorno-motion-v1.webp",
       "columns": 4,
       "rows": 4,
       "version": "expansion-v1",
@@ -1104,7 +1104,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     },
     "knockdown": {
-      "src": "assets/jojo/generated/giorno-kira-prone-v1.png",
+      "src": "assets/jojo/generated/giorno-kira-prone-v1.webp",
       "columns": 1,
       "rows": 1,
       "version": "expansion-prone-v1",
@@ -1127,7 +1127,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
     }
   },
   "kira": {
-    "src": "assets/jojo/generated/kira-actions-v1.png",
+    "src": "assets/jojo/generated/kira-actions-v1.webp",
     "columns": 4,
     "rows": 4,
     "version": "expansion-v1",
@@ -1298,7 +1298,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     ],
     "motion": {
-      "src": "assets/jojo/generated/kira-motion-v1.png",
+      "src": "assets/jojo/generated/kira-motion-v1.webp",
       "columns": 4,
       "rows": 4,
       "version": "expansion-v1",
@@ -1470,7 +1470,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     },
     "knockdown": {
-      "src": "assets/jojo/generated/giorno-kira-prone-v1.png",
+      "src": "assets/jojo/generated/giorno-kira-prone-v1.webp",
       "columns": 1,
       "rows": 1,
       "version": "expansion-prone-v1",
@@ -1493,7 +1493,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
     }
   },
   "pucci": {
-    "src": "assets/jojo/generated/pucci-actions-v1.png",
+    "src": "assets/jojo/generated/pucci-actions-v1.webp",
     "columns": 4,
     "rows": 4,
     "version": "expansion-v1",
@@ -1696,7 +1696,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       }
     ],
     "motion": {
-      "src": "assets/jojo/generated/pucci-motion-v1.png",
+      "src": "assets/jojo/generated/pucci-motion-v1.webp",
       "columns": 4,
       "rows": 4,
       "version": "expansion-v1",
@@ -1868,7 +1868,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     },
     "knockdown": {
-      "src": "assets/jojo/generated/pucci-okuyasu-prone-v1.png",
+      "src": "assets/jojo/generated/pucci-okuyasu-prone-v1.webp",
       "columns": 1,
       "rows": 1,
       "version": "expansion-prone-v1",
@@ -1891,7 +1891,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
     }
   },
   "okuyasu": {
-    "src": "assets/jojo/generated/okuyasu-actions-v1.png",
+    "src": "assets/jojo/generated/okuyasu-actions-v1.webp",
     "columns": 4,
     "rows": 4,
     "version": "expansion-v1",
@@ -2062,7 +2062,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     ],
     "motion": {
-      "src": "assets/jojo/generated/okuyasu-motion-v1.png",
+      "src": "assets/jojo/generated/okuyasu-motion-v1.webp",
       "columns": 4,
       "rows": 4,
       "version": "expansion-v1",
@@ -2234,7 +2234,7 @@ const JOJO_SPRITE_CONFIG = Object.freeze({
       ]
     },
     "knockdown": {
-      "src": "assets/jojo/generated/pucci-okuyasu-prone-v1.png",
+      "src": "assets/jojo/generated/pucci-okuyasu-prone-v1.webp",
       "columns": 1,
       "rows": 1,
       "version": "expansion-prone-v1",

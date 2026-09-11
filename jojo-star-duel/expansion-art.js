@@ -3,7 +3,7 @@
 const JOJO_EXPANSION_ART = Object.freeze({
   "specs": {
     "giorno": {
-      "src": "assets/jojo/generated/giorno-actions-v1.png",
+      "src": "assets/jojo/generated/giorno-actions-v1.webp",
       "rect": [
         47,
         13,
@@ -15,7 +15,7 @@ const JOJO_EXPANSION_ART = Object.freeze({
       "chromaKey": "magenta"
     },
     "kira": {
-      "src": "assets/jojo/generated/kira-actions-v1.png",
+      "src": "assets/jojo/generated/kira-actions-v1.webp",
       "rect": [
         72,
         19,
@@ -27,7 +27,7 @@ const JOJO_EXPANSION_ART = Object.freeze({
       "chromaKey": "magenta"
     },
     "gold-experience": {
-      "src": "assets/jojo/generated/gold-experience-strike-v1.png",
+      "src": "assets/jojo/generated/gold-experience-strike-v1.webp",
       "rect": [
         70,
         31,
@@ -39,7 +39,7 @@ const JOJO_EXPANSION_ART = Object.freeze({
       "chromaKey": "magenta"
     },
     "killer-queen": {
-      "src": "assets/jojo/generated/killer-queen-strike-v1.png",
+      "src": "assets/jojo/generated/killer-queen-strike-v1.webp",
       "rect": [
         60,
         32,
@@ -51,7 +51,7 @@ const JOJO_EXPANSION_ART = Object.freeze({
       "chromaKey": "magenta"
     },
     "pucci": {
-      "src": "assets/jojo/generated/pucci-actions-v1.png",
+      "src": "assets/jojo/generated/pucci-actions-v1.webp",
       "rect": [
         46,
         8,
@@ -63,7 +63,7 @@ const JOJO_EXPANSION_ART = Object.freeze({
       "chromaKey": "magenta"
     },
     "okuyasu": {
-      "src": "assets/jojo/generated/okuyasu-actions-v1.png",
+      "src": "assets/jojo/generated/okuyasu-actions-v1.webp",
       "rect": [
         34,
         15,
@@ -75,7 +75,7 @@ const JOJO_EXPANSION_ART = Object.freeze({
       "chromaKey": "magenta"
     },
     "made-in-heaven": {
-      "src": "assets/jojo/generated/made-in-heaven-strike-v1.png",
+      "src": "assets/jojo/generated/made-in-heaven-strike-v1.webp",
       "rect": [
         228,
         12,
@@ -87,7 +87,7 @@ const JOJO_EXPANSION_ART = Object.freeze({
       "chromaKey": "magenta"
     },
     "the-hand": {
-      "src": "assets/jojo/generated/the-hand-strike-v1.png",
+      "src": "assets/jojo/generated/the-hand-strike-v1.webp",
       "rect": [
         91,
         26,

@@ -6,8 +6,8 @@
 const JojoActionSprites = (() => {
   const assets = new Map();
   const defaults = {
-    jotaro: { src: 'assets/jojo/generated/jotaro-actions-v1.png', columns: 4, rows: 4, version: 'v1' },
-    dio: { src: 'assets/jojo/generated/dio-actions-v1.png', columns: 4, rows: 4, version: 'v1' }
+    jotaro: { src: 'assets/jojo/generated/jotaro-actions-v1.webp', columns: 4, rows: 4, version: 'v1' },
+    dio: { src: 'assets/jojo/generated/dio-actions-v1.webp', columns: 4, rows: 4, version: 'v1' }
   };
   const finite = (n, fallback = 0) => Number.isFinite(n) ? n : fallback;
   const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
