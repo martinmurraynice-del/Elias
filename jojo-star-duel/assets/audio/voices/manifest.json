@@ -1,0 +1,114 @@
+[
+  {
+    "id": "jotaro.intro",
+    "src": "assets/audio/voices/jotaro-intro.wav",
+    "text": "始めるぞ。",
+    "voice": "Reed (日语（日本）)",
+    "duration": 0.6237
+  },
+  {
+    "id": "jotaro.attack",
+    "src": "assets/audio/voices/jotaro-attack.wav",
+    "text": "オラッ！",
+    "voice": "Reed (日语（日本）)",
+    "duration": 0.2605
+  },
+  {
+    "id": "jotaro.hurt",
+    "src": "assets/audio/voices/jotaro-hurt.wav",
+    "text": "ぐっ！",
+    "voice": "Reed (日语（日本）)",
+    "duration": 0.1864
+  },
+  {
+    "id": "jotaro.superStart",
+    "src": "assets/audio/voices/jotaro-superStart.wav",
+    "text": "スタープラチナ！",
+    "voice": "Reed (日语（日本）)",
+    "duration": 0.56
+  },
+  {
+    "id": "jotaro.superRush",
+    "src": "assets/audio/voices/jotaro-superRush.wav",
+    "text": "オラオラオラオラオラ！",
+    "voice": "Reed (日语（日本）)",
+    "duration": 1.22
+  },
+  {
+    "id": "jotaro.starAscend",
+    "src": "assets/audio/voices/jotaro-starAscend.wav",
+    "text": "打ち上げる！",
+    "voice": "Reed (日语（日本）)",
+    "duration": 0.549
+  },
+  {
+    "id": "jotaro.starCounter",
+    "src": "assets/audio/voices/jotaro-starCounter.wav",
+    "text": "そこだ！",
+    "voice": "Reed (日语（日本）)",
+    "duration": 0.4462
+  },
+  {
+    "id": "jotaro.win",
+    "src": "assets/audio/voices/jotaro-win.wav",
+    "text": "終わりだ。",
+    "voice": "Reed (日语（日本）)",
+    "duration": 0.4344
+  },
+  {
+    "id": "dio.intro",
+    "src": "assets/audio/voices/dio-intro.wav",
+    "text": "来い！",
+    "voice": "Eddy (日语（日本）)",
+    "duration": 0.33
+  },
+  {
+    "id": "dio.attack",
+    "src": "assets/audio/voices/dio-attack.wav",
+    "text": "無駄！",
+    "voice": "Eddy (日语（日本）)",
+    "duration": 0.2852
+  },
+  {
+    "id": "dio.hurt",
+    "src": "assets/audio/voices/dio-hurt.wav",
+    "text": "ぐっ！",
+    "voice": "Eddy (日语（日本）)",
+    "duration": 0.1839
+  },
+  {
+    "id": "dio.superStart",
+    "src": "assets/audio/voices/dio-superStart.wav",
+    "text": "ザ・ワールド！",
+    "voice": "Eddy (日语（日本）)",
+    "duration": 0.56
+  },
+  {
+    "id": "dio.superRush",
+    "src": "assets/audio/voices/dio-superRush.wav",
+    "text": "無駄無駄無駄無駄無駄！",
+    "voice": "Eddy (日语（日本）)",
+    "duration": 1.22
+  },
+  {
+    "id": "dio.timeAmbush",
+    "src": "assets/audio/voices/dio-timeAmbush.wav",
+    "text": "逃がさん！",
+    "voice": "Eddy (日语（日本）)",
+    "duration": 0.6003
+  },
+  {
+    "id": "dio.knifeArray",
+    "src": "assets/audio/voices/dio-knifeArray.wav",
+    "text": "逃げ場はない！",
+    "voice": "Eddy (日语（日本）)",
+    "duration": 0.6002
+  },
+  {
+    "id": "dio.win",
+    "src": "assets/audio/voices/dio-win.wav",
+    "text": "私の勝ちだ！",
+    "voice": "Eddy (日语（日本）)",
+    "duration": 0.7928
+  }
+]

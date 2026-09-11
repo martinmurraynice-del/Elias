@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17121e">
+  <title>JOJO · 星尘对决</title>
+  <link rel="stylesheet" href="style.css?v=jojo-startup-41">
+</head>
+<body>
+  <header>
+    <a class="brand" href="./">JOJO<span>STARDUST CRUSADERS</span></a>
+    <div class="status"><i></i> 本地对战原型 <span>06 FIGHTERS / 04 STAGES</span></div>
+  </header>
+  <main>
+    <div class="heading">
+      <div><p class="eyebrow">JOJO'S BIZARRE ADVENTURE / FAN BATTLE</p><h1>星尘对决<span>六位替身使者 <em>·</em> 四大战场</span></h1></div>
+      <div class="tools"><button id="motion-open" disabled>招式演示</button><button id="sound" aria-pressed="true">声音：开</button><button id="audio-open">音频设置</button><button id="pause">暂停 Esc</button><button id="fullscreen">全屏 ↗</button></div>
+    </div>
+    <section class="arena" id="arena">
+      <canvas id="game" width="1100" height="600" aria-label="JOJO 横版格斗游戏，操作方法见下方"></canvas>
+      <div class="overlay" id="menu">
+        <div class="menu-card roster-card">
+          <p class="eyebrow">CHOOSE YOUR STAND USER</p>
+          <h2>命运的对决，就此开始。</h2>
+          <p class="muted">选择 1P、对手与地图，开启三局两胜的对决</p>
+          <div class="fighters">
+            <button class="fighter selected" data-char="jotaro" aria-label="选择空条承太郎">
+              <span class="portrait jotaro"><canvas id="jotaro-portrait" width="320" height="320" role="img" aria-label="空条承太郎第三部战斗造型"></canvas></span>
+              <b>空条承太郎</b><small>白金之星 · 欧拉连打</small>
+            </button>
+            <button class="fighter" data-char="dio" aria-label="选择 DIO">
+              <span class="portrait dio"><canvas id="dio-portrait" width="320" height="320" role="img" aria-label="DIO 第三部战斗造型"></canvas></span>
+              <b>DIO</b><small>世界 · 无駄连打</small>
+            </button>
+            <button class="fighter" data-char="giorno" aria-label="选择乔鲁诺"><span class="portrait giorno"><canvas id="giorno-portrait" width="320" height="320" role="img" aria-label="乔鲁诺战斗造型"></canvas></span><b>乔鲁诺</b><small>黄金体验</small></button>
+            <button class="fighter" data-char="kira" aria-label="选择吉良吉影"><span class="portrait kira"><canvas id="kira-portrait" width="320" height="320" role="img" aria-label="吉良吉影战斗造型"></canvas></span><b>吉良吉影</b><small>杀手皇后</small></button>
+            <button class="fighter" data-char="pucci" aria-label="选择普奇神父"><span class="portrait pucci"><canvas id="pucci-portrait" width="320" height="320" role="img" aria-label="普奇神父战斗造型"></canvas></span><b>普奇神父</b><small>天堂制造</small></button>
+            <button class="fighter" data-char="okuyasu" aria-label="选择虹村亿泰"><span class="portrait okuyasu"><canvas id="okuyasu-portrait" width="320" height="320" role="img" aria-label="虹村亿泰战斗造型"></canvas></span><b>虹村亿泰</b><small>轰炸空间</small></button>
+          </div>
+          <div class="settings match-settings">
+            <label>对手 / 2P<select id="opponent"><option value="jotaro">空条承太郎</option><option value="dio" selected>DIO</option><option value="giorno">乔鲁诺</option><option value="kira">吉良吉影</option><option value="pucci">普奇神父</option><option value="okuyasu">虹村亿泰</option></select></label>
+            <label>对战模式<select id="mode"><option value="cpu">单人 VS 电脑</option><option value="versus">双人 · 同屏对战</option><option value="training">试招练习 · 无限气</option></select></label>
+            <label>电脑难度<select id="difficulty"><option value="easy">入门</option><option value="normal" selected>标准</option><option value="hard">挑战</option></select></label>
+          </div>
+          <div class="stage-select" role="group" aria-label="选择地图">
+            <button data-stage="cairo" class="selected" aria-pressed="true"><b>开罗 · 夜色</b><small>原始战场 / 多层屋顶</small></button>
+            <button data-stage="naples" aria-pressed="false"><b>那不勒斯港湾</b><small>落日码头 / 开阔横向</small></button>
+            <button data-stage="morioh" aria-pressed="false"><b>杜王町</b><small>街区屋檐 / 错层追击</small></button>
+            <button data-stage="cape" aria-pressed="false"><b>肯尼迪航天中心</b><small>发射高塔 / 纵向争夺</small></button>
+          </div>
+          <p id="match-summary" class="match-summary">空条承太郎 VS DIO · 开罗 · 夜色</p>
+          <button id="start" class="primary" disabled>开始对战 <span>→</span></button>
+          <small class="art-note">六位角色 · 独立替身技能 · 自由配对</small>
+          <small id="asset-status" class="footnote" aria-live="polite">角色动作加载中…</small>
+        </div>
+      </div>
+      <div class="overlay hidden" id="result"><div class="menu-card compact"><p class="eyebrow" id="result-label">PAUSED</p><h2 id="result-title">对战暂停</h2><p class="muted" id="result-detail"></p><button class="primary" id="continue">继续对战 →</button><button class="secondary" id="back">返回选人</button></div></div>
+      <div class="motion-view hidden" id="motion-view" role="dialog" aria-modal="true" aria-labelledby="motion-title">
+        <div class="motion-heading"><div><p class="eyebrow">MOVE STUDY</p><h2 id="motion-title">查看完整动作与衔接</h2></div><button class="secondary" id="motion-close">返回游戏 ×</button></div>
+        <label class="motion-character-label">演示角色 <select id="motion-character"><option value="jotaro" selected>空条承太郎</option><option value="dio">DIO</option><option value="giorno">乔鲁诺</option><option value="kira">吉良吉影</option><option value="pucci">普奇神父</option><option value="okuyasu">虹村亿泰</option></select></label>
+        <p class="motion-intro">与实战相同的动作 · 普攻观察拳脚，方向招式查看替身与弹道 · 可慢放或拖动进度</p>
+        <canvas id="motion-canvas" width="1000" height="390" aria-label="角色移动、跳跃、冲刺和普攻动作演示"></canvas>
+        <div class="motion-moves" role="group" aria-label="选择招式"><button data-move="0" aria-pressed="true">完整五连</button><button data-move="1" aria-pressed="false">01 直拳</button><button data-move="2" aria-pressed="false">02 交叉拳</button><button data-move="3" aria-pressed="false">03 侧踢</button><button data-move="4" aria-pressed="false">04 双击</button><button data-move="5" aria-pressed="false">05 重拳</button></div>
+        <div class="motion-moves motion-states" role="group" aria-label="选择身体动作"><button data-motion="idle" aria-pressed="false">待机</button><button data-motion="run" aria-pressed="false">跑步接拳</button><button data-motion="jump" aria-pressed="false">跳跃接拳</button><button data-motion="dash" aria-pressed="false">闪现 / 冲刺</button><button data-motion="guard" aria-pressed="false">防御</button><button data-motion="hit" aria-pressed="false">受击 / 倒地</button></div>
+        <div class="motion-moves motion-commands" role="group" aria-label="选择方向组合招"><button data-motion="command-upper" aria-pressed="false">W + J 上挑</button><button data-motion="command-heavy" aria-pressed="false">S + J 低扫</button><button data-motion="command-dashRanged" aria-pressed="false">A / D + U 突进远射</button><button data-motion="command-rangedUp" aria-pressed="false">W + U 斜上远射</button><button data-motion="command-rangedLow" aria-pressed="false">S + U 低位远射</button></div>
+        <div class="motion-moves motion-signatures" role="group" aria-label="选择角色专属技"><button data-motion="command-starAscend" aria-pressed="false">承太郎 · 流星升击</button><button data-motion="command-starCounter" aria-pressed="false">承太郎 · 绝境反击</button><button data-motion="command-timeAmbush" aria-pressed="false">DIO · 时隙闪袭</button><button data-motion="command-knifeArray" aria-pressed="false">DIO · 时锁刃阵</button><button data-motion="command-rootBloom" aria-pressed="false">乔鲁诺 · 生命萌发</button><button data-motion="command-lifeBind" aria-pressed="false">乔鲁诺 · 藤蔓束缚</button><button data-motion="command-sheerHeart" aria-pressed="false">吉良 · 枯萎穿心</button><button data-motion="command-chainBomb" aria-pressed="false">吉良 · 连环引爆</button><button data-motion="command-heavenDrive" aria-pressed="false">普奇 · 天堂疾行</button><button data-motion="command-gravityWell" aria-pressed="false">普奇 · 重力牵引</button><button data-motion="command-spaceErase" aria-pressed="false">亿泰 · 空间削除</button><button data-motion="command-palmCrush" aria-pressed="false">亿泰 · 合掌重击</button></div>
+        <div class="motion-playback"><button class="secondary" id="motion-play">暂停动画</button><label>速度 <select id="motion-speed"><option value="1">1× 实战</option><option value="0.5" selected>0.5× 慢放</option></select></label><input id="motion-scrub" type="range" min="0" max="1000" value="0" aria-label="动作进度"><output id="motion-phase">起手</output></div>
+      </div>
+    </section>
+    <div class="under"><span id="stage-label"><i></i> 开罗 · 夜色</span><span id="arena-mode">三局两胜 / 90 秒 / 键盘操作</span></div>
+    <details class="audio-settings" id="audio-settings">
+      <summary><span>声音与配乐</span><small id="audio-status" aria-live="polite">开始对战后启用声音</small></summary>
+      <div class="audio-body">
+        <div class="audio-mixer">
+          <label>背景音乐 <output id="level-music">35%</output><input id="volume-music" type="range" min="0" max="100" value="35"></label>
+          <label>战斗音效 <output id="level-sfx">75%</output><input id="volume-sfx" type="range" min="0" max="100" value="75"></label>
+          <label>人物声音 <output id="level-voice">85%</output><input id="volume-voice" type="range" min="0" max="100" value="85"></label>
+        </div>
+        <div class="audio-sources">
+          <div><h3>战斗配乐</h3><p>唯一背景音乐：菅野祐悟《スターダストクルセイダース》官方发行版。</p>
+            <p>开始对战并启用声音后自动连接。若浏览器未允许播放，请点击下方播放器的“播放官方配乐”。</p>
+          </div>
+          <div><h3>角色喊招</h3><p>六位角色已接入日语台词录音。新增黄金体验、杀手皇后、天堂制造与轰炸空间的召唤和招式喊声。完整必杀固定 1 秒前摇，召唤台词完整播完后再接连打台词。选择角色与台词可逐句试听、查看来源或替换；暂缺的喊声保留战斗音效。素材来自社区剪辑，原集数尚未逐一核对。</p>
+            <label class="audio-field">角色与台词<select id="voice-slot"></select></label>
+            <div class="audio-actions"><button class="secondary" id="voice-preview">试听这句</button><button class="secondary" id="sfx-preview">试听命中音效</button></div>
+            <div class="audio-actions"><label class="audio-file">替换这句台词<input id="voice-file" type="file" accept="audio/*,.mp3,.wav,.ogg,.m4a"></label><button class="secondary" id="voice-reset">恢复默认</button></div><small id="voice-file-label">当前：角色台词录音</small><small id="voice-timing" class="voice-timing"></small><a id="voice-source" class="voice-source" target="_blank" rel="noopener noreferrer">查看这句素材来源 ↗</a>
+          </div>
+        </div>
+        <p id="audio-message" class="audio-message" role="status">人物说话与大招演出时，音乐会自动降低。音量和导入文件保存在此浏览器。</p>
+      </div>
+    </details>
+    <section id="official-player-section" class="official-player-section" aria-label="JOJO 官方配乐播放器">
+      <div><p class="eyebrow">OFFICIAL SOUNDTRACK</p><h3>スターダストクルセイダース</h3><p>菅野祐悟 · 官方发行版本</p><p>开战后自动连接播放。暂停、静音或离开游戏时同步暂停；回到游戏继续对战后恢复。</p>
+        <div class="audio-actions"><button class="secondary" id="official-load">播放官方配乐</button><a href="https://www.youtube.com/watch?v=wtrFQLivuCg" target="_blank" rel="noopener noreferrer">官方原曲页面 ↗</a></div>
+        <small id="official-status" aria-live="polite">开始对战后自动连接官方配乐。</small></div><div id="official-player"></div>
+    </section>
+    <section class="guide">
+      <div><p class="eyebrow">PLAYER 01</p><h3>出拳、侧踢，再重拳收尾。</h3><p>连续按 J：直拳 → 交叉拳 → 抬腿侧踢 → 双击 → 终结重拳。前三段由人物直接出招；可提前连按接招，按住不会自动连打。A / D 决定面向，松开后保持方向；出招朝当前面向发出。连击收尾或必杀命中后，对手会倒地再起身。点击上方「招式演示」可慢放或拖动查看每个姿态。</p><p>K 跳跃，在空中再按一次 K 登上高台；S + K 从平台下落。开阔地面与多层屋顶均可交战，镜头随双方距离自动缩放。</p><p>六位角色的完整必杀均有 1 秒反应窗口。看到「蓄势 · 可打断」后，可以移动、跳跃躲开，或面朝对手按住 S 防守（2P 按 ↓）；在这 1 秒内命中施放者可打断大招。1 秒结束时才检查捕捉，大招收招时也能追击。</p></div>
+      <div class="keys"><span><kbd>A</kbd><kbd>D</kbd> 移动</span><span><kbd>S</kbd> 防御</span><span><kbd>J</kbd> 连续普攻</span><span><kbd>K</kbd> 二段跳</span><span><kbd>L</kbd> 方向冲刺</span><span><kbd>U</kbd> 远攻</span><span><kbd>I</kbd> 必杀 · 1 层</span><span><kbd>O</kbd> 援助 · 12 秒</span><span><kbd>S</kbd> + <kbd>O</kbd> 爆气 · 50 气</span></div>
+    </section>
+    <p class="energy-guide">三层共用能量槽：<b>淡蓝 → 黄色 → 红色</b>，每层 100，最多 300。普攻命中 +12，被格挡 +5；挨打按实际损血的 20% 回能。完整必杀消耗 1 层，爆气消耗半层；其他技能按标注扣气。普通对战开局 0 气，练习模式三层全满。</p>
+    <section class="command-guide" aria-label="受击爆气操作">
+      <div class="command-guide-heading"><h3>被压制时，爆气挣脱。</h3><p>按住防御，再点按援助：1P 使用 S + O，2P 使用 ↓ + 6（支持小键盘）。</p></div>
+      <div class="command-list">
+        <div><b>解除控制</b><span>受击硬直、倒地和替身大招连打中均可发动，打断正在控制你的进攻。</span><small>消耗 50 气</small></div>
+        <div><b>震开对手</b><span>向四周爆发冲击环，推开近处对手、消除范围内敌方飞行道具，获得短暂无敌。</span><small>不造成伤害</small></div>
+        <div><b>把握脱身时机</b><span>与援助共用 12 秒冷却；用过援助后需要等待。每次发动都需重新点按援助键。</span><small>练习模式无限气、无冷却</small></div>
+      </div>
+    </section>
+    <section class="command-guide signature-guide" aria-label="角色专属招式">
+      <div class="command-guide-heading"><h3>相同指令，不同打法。</h3><p>W / S + I 使用当前角色的专属技；单按 I 使用当前角色的完整必杀。2P 使用 ↑ / ↓ + 5。</p></div>
+      <div class="command-list signature-list">
+        <div><small>空条承太郎 · 65 气</small><b><kbd>W</kbd> + <kbd>I</kbd> 流星升击</b><span>向前上方展开更大的三段升击范围，终击挑飞倒地；紫白螺旋与爆环覆盖拳路。</span></div>
+        <div><small>空条承太郎 · 40 气</small><b><kbd>S</kbd> + <kbd>I</kbd> 绝境反击</b><span>主动向前突击，以十字星光命中并击倒对手。冲锋可以被防守或打断，结束后制动收拳。</span></div>
+        <div><small>DIO · 60 气</small><b><kbd>W</kbd> + <kbd>I</kbd> 时隙闪袭</b><span>留下钟面残像，向更远处瞬移后连续击打两次。近敌前停步，最后一击打倒对手。</span></div>
+        <div><small>DIO · 55 气</small><b><kbd>S</kbd> + <kbd>I</kbd> 时锁刃阵</b><span>五把飞刀先悬停，再逐把交错射出。可被提前打断，已飞出的刀继续前进。</span></div>
+        <div><small>乔鲁诺 · 黄金体验</small><b>生命萌发 / 藤蔓束缚</b><span>W + I 用树根连续挑起；S + I 发出束缚弹。命中后限制移动，对手仍可防守或爆气。</span></div>
+        <div><small>吉良吉影 · 杀手皇后</small><b>枯萎穿心 / 连环引爆</b><span>W + I 释放贴地追踪弹；S + I 近身留下炸弹标记，随后分次爆破。</span></div>
+        <div><small>普奇神父 · 天堂制造</small><b>天堂疾行 / 重力牵引</b><span>W + I 加速突进三段连袭；S + I 用重力场把对手拉近。完整必杀的攻击逐步加速；重力牵引能捕捉更远的前方对手，持续拉近后停在身前。</span></div>
+        <div><small>虹村亿泰 · 轰炸空间</small><b>空间削除 / 合掌重击</b><span>W + I 削去间隔，将前方对手拉近；S + I 蓄力重掌击倒。空间削除距离延长，近处目标停在身前。完整必杀以三次强力削除收尾。</span></div>
+      </div>
+    </section>
+    <section class="command-guide" aria-label="方向组合招操作表">
+      <div class="command-guide-heading"><h3>方向组合招</h3><p>按住方向，再点按攻击键。左右均可出招；空中也能使用。试招练习模式为无限气。</p></div>
+      <div class="command-list">
+        <div><b><kbd>W</kbd> + <kbd>J</kbd> 上挑</b><span>替身由低向高击打，将对手挑起</span><small>不耗气</small></div>
+        <div><b><kbd>S</kbd> + <kbd>J</kbd> 低扫</b><span>压低重心，攻击下段并击倒</span><small>不耗气</small></div>
+        <div><b><kbd>A</kbd> / <kbd>D</kbd> + <kbd>U</kbd> 突进远射</b><span>先向所按方向突进，再发出远程拳波</span><small>22 气</small></div>
+        <div><b><kbd>W</kbd> + <kbd>U</kbd> 斜上远射</b><span>朝前上方发射，用于追击空中目标</span><small>16 气</small></div>
+        <div><b><kbd>S</kbd> + <kbd>U</kbd> 低位远射</b><span>蹲身发出低位拳波，可从高跳下方穿过</span><small>18 气</small></div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-controls"><span>2P：← → 移动及转向 / ↓ 防御 / 数字 1–6 对应普攻、跳跃、冲刺、远攻、必杀、援助；连续按 1 接五连（支持小键盘）</span><span>2P 组合：↑ / ↓ + 1 上挑 / 低扫；← / → / ↑ / ↓ + 4 对应方向远射。平台下落：S + K / ↓ + 2</span></div>
+      <div class="credits"><span>动画角色原画 · <a href="https://natalie.mu/comic/news/106280" target="_blank" rel="noopener noreferrer">承太郎站姿 ↗</a> · <a href="https://jojo-portal.com/anime/sc/character/01/" target="_blank" rel="noopener noreferrer">白金之星 ↗</a> · <a href="https://jojo-portal.com/anime/sc/character/07/" target="_blank" rel="noopener noreferrer">DIO / 世界 ↗</a></span><span>同人对战原型</span></div>
+    </footer>
+  </main>
+  <script src="voice-timing.js?v=jojo-startup-41"></script>
+  <script src="combat-geometry.js?v=jojo-startup-41"></script>
+  <script src="stage.js?v=jojo-startup-41"></script>
+  <script src="battle-vfx.js?v=jojo-startup-41"></script>
+  <script src="sprite-data.js?v=jojo-startup-41"></script>
+  <script src="sprite-animation.js?v=jojo-startup-41"></script>
+  <script src="expansion-art.js?v=jojo-startup-41"></script>
+  <script src="fighter-render.js?v=jojo-startup-41"></script>
+  <script src="super-render.js?v=jojo-startup-41"></script>
+  <script src="audio-data.js?v=jojo-startup-41"></script>
+  <script src="audio-engine.js?v=jojo-startup-41"></script>
+  <script src="energy-hud.js?v=jojo-startup-41"></script>
+  <script src="game.js?v=jojo-startup-41"></script>
+  <script src="motion-preview.js?v=jojo-startup-41"></script>
+  <script src="audio-ui.js?v=jojo-startup-41"></script>
+</body>
+</html>

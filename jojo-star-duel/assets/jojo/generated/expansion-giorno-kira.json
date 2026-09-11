@@ -1,0 +1,2372 @@
+{
+  "version": "giorno-kira-expansion-v1",
+  "date": "2026-09-11",
+  "generator": "built-in imagegen; model version not selected or verified",
+  "method": "Images copied unchanged. Read-only connected-component analysis using the existing magenta core threshold; crop rectangles have 2px padding and can cross nominal grid cells. Fixed shared action/motion sourceHeight; translation-only foot alignment. Running anchors follow pelvis, rising/apex use a virtual foot plane, falling aligns actual sole. Anchors are reviewed suggestions for integration visual QA, not per-frame stretching.",
+  "sprites": {
+    "giorno": {
+      "src": "assets/jojo/generated/giorno-actions-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "version": "expansion-v1",
+      "chromaKey": "magenta",
+      "sourceHeight": 291,
+      "frameRects": [
+        [
+          47,
+          13,
+          180,
+          294
+        ],
+        [
+          357,
+          12,
+          187,
+          292
+        ],
+        [
+          671,
+          11,
+          249,
+          293
+        ],
+        [
+          989,
+          13,
+          185,
+          292
+        ],
+        [
+          44,
+          325,
+          214,
+          293
+        ],
+        [
+          337,
+          325,
+          279,
+          292
+        ],
+        [
+          678,
+          324,
+          199,
+          293
+        ],
+        [
+          1029,
+          317,
+          129,
+          296
+        ],
+        [
+          17,
+          645,
+          298,
+          285
+        ],
+        [
+          412,
+          638,
+          118,
+          289
+        ],
+        [
+          660,
+          641,
+          246,
+          289
+        ],
+        [
+          989,
+          640,
+          213,
+          291
+        ],
+        [
+          27,
+          956,
+          264,
+          286
+        ],
+        [
+          356,
+          980,
+          209,
+          259
+        ],
+        [
+          626,
+          957,
+          312,
+          275
+        ],
+        [
+          987,
+          954,
+          193,
+          288
+        ]
+      ],
+      "frameAnchors": [
+        [
+          82.75,
+          292
+        ],
+        [
+          87.0,
+          290
+        ],
+        [
+          96.25,
+          291
+        ],
+        [
+          86.0,
+          290
+        ],
+        [
+          99.75,
+          291
+        ],
+        [
+          104.5,
+          290
+        ],
+        [
+          92.0,
+          291
+        ],
+        [
+          54.5,
+          294
+        ],
+        [
+          90.0,
+          283
+        ],
+        [
+          58.0,
+          287
+        ],
+        [
+          99.0,
+          287
+        ],
+        [
+          88.25,
+          289
+        ],
+        [
+          94.75,
+          284
+        ],
+        [
+          104.0,
+          257
+        ],
+        [
+          130.5,
+          273
+        ],
+        [
+          90.0,
+          286
+        ]
+      ],
+      "motion": {
+        "src": "assets/jojo/generated/giorno-motion-v1.png",
+        "columns": 4,
+        "rows": 4,
+        "version": "expansion-v1",
+        "chromaKey": "magenta",
+        "sourceHeight": 291,
+        "frameRects": [
+          [
+            45,
+            12,
+            188,
+            297
+          ],
+          [
+            357,
+            12,
+            189,
+            297
+          ],
+          [
+            663,
+            23,
+            230,
+            284
+          ],
+          [
+            989,
+            17,
+            185,
+            292
+          ],
+          [
+            20,
+            325,
+            257,
+            286
+          ],
+          [
+            330,
+            327,
+            269,
+            284
+          ],
+          [
+            651,
+            401,
+            201,
+            199
+          ],
+          [
+            924,
+            382,
+            314,
+            218
+          ],
+          [
+            34,
+            654,
+            268,
+            268
+          ],
+          [
+            397,
+            720,
+            141,
+            203
+          ],
+          [
+            659,
+            630,
+            179,
+            293
+          ],
+          [
+            970,
+            633,
+            230,
+            218
+          ],
+          [
+            30,
+            930,
+            223,
+            307
+          ],
+          [
+            349,
+            1032,
+            200,
+            189
+          ],
+          [
+            672,
+            946,
+            207,
+            286
+          ],
+          [
+            988,
+            955,
+            206,
+            270
+          ]
+        ],
+        "frameAnchors": [
+          [
+            87.25,
+            295
+          ],
+          [
+            87.75,
+            295
+          ],
+          [
+            116,
+            282
+          ],
+          [
+            98,
+            290
+          ],
+          [
+            133,
+            284
+          ],
+          [
+            142,
+            282
+          ],
+          [
+            94,
+            197
+          ],
+          [
+            177,
+            216
+          ],
+          [
+            112.0,
+            266
+          ],
+          [
+            58.0,
+            201
+          ],
+          [
+            107,
+            270
+          ],
+          [
+            120,
+            267
+          ],
+          [
+            141,
+            305
+          ],
+          [
+            100,
+            187
+          ],
+          [
+            96.0,
+            284
+          ],
+          [
+            109.75,
+            268
+          ]
+        ]
+      },
+      "knockdown": {
+        "src": "assets/jojo/generated/giorno-kira-prone-v1.png",
+        "columns": 1,
+        "rows": 1,
+        "version": "expansion-prone-v1",
+        "chromaKey": "magenta",
+        "sourceHeight": 1120,
+        "frameRects": [
+          [
+            66,
+            290,
+            1124,
+            220
+          ]
+        ],
+        "frameAnchors": [
+          [
+            2,
+            218
+          ]
+        ]
+      }
+    },
+    "kira": {
+      "src": "assets/jojo/generated/kira-actions-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "version": "expansion-v1",
+      "chromaKey": "magenta",
+      "sourceHeight": 276,
+      "frameRects": [
+        [
+          72,
+          19,
+          168,
+          279
+        ],
+        [
+          375,
+          16,
+          178,
+          282
+        ],
+        [
+          676,
+          21,
+          237,
+          276
+        ],
+        [
+          1008,
+          15,
+          170,
+          283
+        ],
+        [
+          59,
+          328,
+          199,
+          285
+        ],
+        [
+          357,
+          327,
+          249,
+          285
+        ],
+        [
+          694,
+          328,
+          172,
+          283
+        ],
+        [
+          1026,
+          319,
+          125,
+          295
+        ],
+        [
+          27,
+          643,
+          274,
+          277
+        ],
+        [
+          407,
+          636,
+          128,
+          288
+        ],
+        [
+          667,
+          641,
+          236,
+          280
+        ],
+        [
+          986,
+          641,
+          206,
+          280
+        ],
+        [
+          56,
+          954,
+          243,
+          276
+        ],
+        [
+          362,
+          981,
+          202,
+          248
+        ],
+        [
+          625,
+          960,
+          310,
+          265
+        ],
+        [
+          996,
+          952,
+          191,
+          278
+        ]
+      ],
+      "frameAnchors": [
+        [
+          77.25,
+          277
+        ],
+        [
+          82.5,
+          280
+        ],
+        [
+          86.25,
+          274
+        ],
+        [
+          78.5,
+          281
+        ],
+        [
+          93.25,
+          283
+        ],
+        [
+          93.25,
+          283
+        ],
+        [
+          79.75,
+          281
+        ],
+        [
+          60.5,
+          293
+        ],
+        [
+          75.0,
+          275
+        ],
+        [
+          53.0,
+          286
+        ],
+        [
+          89.25,
+          278
+        ],
+        [
+          93.5,
+          278
+        ],
+        [
+          90.5,
+          274
+        ],
+        [
+          97.0,
+          246
+        ],
+        [
+          132.0,
+          263
+        ],
+        [
+          88.75,
+          276
+        ]
+      ],
+      "motion": {
+        "src": "assets/jojo/generated/kira-motion-v1.png",
+        "columns": 4,
+        "rows": 4,
+        "version": "expansion-v1",
+        "chromaKey": "magenta",
+        "sourceHeight": 276,
+        "frameRects": [
+          [
+            72,
+            18,
+            168,
+            280
+          ],
+          [
+            373,
+            18,
+            180,
+            280
+          ],
+          [
+            641,
+            22,
+            254,
+            263
+          ],
+          [
+            980,
+            18,
+            199,
+            279
+          ],
+          [
+            33,
+            327,
+            217,
+            262
+          ],
+          [
+            355,
+            327,
+            239,
+            268
+          ],
+          [
+            673,
+            388,
+            169,
+            206
+          ],
+          [
+            944,
+            385,
+            291,
+            198
+          ],
+          [
+            48,
+            646,
+            245,
+            249
+          ],
+          [
+            401,
+            706,
+            142,
+            190
+          ],
+          [
+            655,
+            613,
+            196,
+            278
+          ],
+          [
+            961,
+            619,
+            261,
+            203
+          ],
+          [
+            33,
+            908,
+            243,
+            305
+          ],
+          [
+            372,
+            1026,
+            186,
+            178
+          ],
+          [
+            679,
+            929,
+            196,
+            279
+          ],
+          [
+            998,
+            940,
+            214,
+            266
+          ]
+        ],
+        "frameAnchors": [
+          [
+            77.25,
+            278
+          ],
+          [
+            83.5,
+            278
+          ],
+          [
+            132,
+            261
+          ],
+          [
+            126,
+            277
+          ],
+          [
+            124,
+            260
+          ],
+          [
+            116,
+            266
+          ],
+          [
+            90,
+            204
+          ],
+          [
+            164,
+            196
+          ],
+          [
+            103.0,
+            247
+          ],
+          [
+            61.25,
+            188
+          ],
+          [
+            116,
+            275
+          ],
+          [
+            130,
+            269
+          ],
+          [
+            135,
+            303
+          ],
+          [
+            84,
+            176
+          ],
+          [
+            91.0,
+            277
+          ],
+          [
+            103.75,
+            264
+          ]
+        ]
+      },
+      "knockdown": {
+        "src": "assets/jojo/generated/giorno-kira-prone-v1.png",
+        "columns": 1,
+        "rows": 1,
+        "version": "expansion-prone-v1",
+        "chromaKey": "magenta",
+        "sourceHeight": 1112,
+        "frameRects": [
+          [
+            73,
+            803,
+            1116,
+            242
+          ]
+        ],
+        "frameAnchors": [
+          [
+            2,
+            240
+          ]
+        ]
+      }
+    }
+  },
+  "stands": {
+    "giorno": {
+      "id": "gold-experience",
+      "src": "assets/jojo/generated/gold-experience-strike-v1.png",
+      "rect": [
+        70,
+        31,
+        1153,
+        1182
+      ],
+      "sourceHeight": 1178,
+      "anchorX": 592,
+      "anchorY": 1211,
+      "nativeFace": 1,
+      "chromaKey": "magenta",
+      "knuckle": [
+        1220,
+        254.5
+      ],
+      "fistL": [
+        1220,
+        254.5
+      ],
+      "note": "Source-pixel knuckle plane of extended arm. Artwork is one rigid full-body drawing; use only uniform scaling and source-pixel anchor translation. No articulated rig segmentation was authored."
+    },
+    "kira": {
+      "id": "killer-queen",
+      "src": "assets/jojo/generated/killer-queen-strike-v1.png",
+      "rect": [
+        60,
+        32,
+        1150,
+        1188
+      ],
+      "sourceHeight": 1184,
+      "anchorX": 588,
+      "anchorY": 1218,
+      "nativeFace": 1,
+      "chromaKey": "magenta",
+      "knuckle": [
+        1207,
+        283.0
+      ],
+      "fistL": [
+        1207,
+        283.0
+      ],
+      "note": "Source-pixel knuckle plane of extended arm. Artwork is one rigid full-body drawing; use only uniform scaling and source-pixel anchor translation. No articulated rig segmentation was authored."
+    }
+  },
+  "normalContactCalibration": {
+    "giorno": [
+      {
+        "frame": 2,
+        "type": "knuckles",
+        "source": [
+          917,
+          63.0
+        ],
+        "offsetFromAnchor": [
+          149.75,
+          -239.0
+        ],
+        "normalizedToBodyHeight": [
+          0.514605,
+          -0.821306
+        ]
+      },
+      {
+        "frame": 5,
+        "type": "knuckles",
+        "source": [
+          613,
+          379.5
+        ],
+        "offsetFromAnchor": [
+          171.5,
+          -235.5
+        ],
+        "normalizedToBodyHeight": [
+          0.589347,
+          -0.809278
+        ]
+      },
+      {
+        "frame": 8,
+        "type": "foot",
+        "source": [
+          312,
+          704.5
+        ],
+        "offsetFromAnchor": [
+          205.0,
+          -223.5
+        ],
+        "normalizedToBodyHeight": [
+          0.704467,
+          -0.768041
+        ]
+      },
+      {
+        "frame": 10,
+        "type": "knuckles",
+        "source": [
+          903,
+          696.0
+        ],
+        "offsetFromAnchor": [
+          144.0,
+          -232.0
+        ],
+        "normalizedToBodyHeight": [
+          0.494845,
+          -0.797251
+        ]
+      },
+      {
+        "frame": 12,
+        "type": "knuckles",
+        "source": [
+          288,
+          1007.5
+        ],
+        "offsetFromAnchor": [
+          166.25,
+          -232.5
+        ],
+        "normalizedToBodyHeight": [
+          0.571306,
+          -0.798969
+        ]
+      },
+      {
+        "frame": 14,
+        "type": "knuckles",
+        "source": [
+          935,
+          1005.0
+        ],
+        "offsetFromAnchor": [
+          178.5,
+          -225.0
+        ],
+        "normalizedToBodyHeight": [
+          0.613402,
+          -0.773196
+        ]
+      }
+    ],
+    "kira": [
+      {
+        "frame": 2,
+        "type": "knuckles",
+        "source": [
+          910,
+          64.5
+        ],
+        "offsetFromAnchor": [
+          147.75,
+          -230.5
+        ],
+        "normalizedToBodyHeight": [
+          0.535326,
+          -0.835145
+        ]
+      },
+      {
+        "frame": 5,
+        "type": "knuckles",
+        "source": [
+          603,
+          371.0
+        ],
+        "offsetFromAnchor": [
+          152.75,
+          -239.0
+        ],
+        "normalizedToBodyHeight": [
+          0.553442,
+          -0.865942
+        ]
+      },
+      {
+        "frame": 8,
+        "type": "foot",
+        "source": [
+          298,
+          693.5
+        ],
+        "offsetFromAnchor": [
+          196.0,
+          -224.5
+        ],
+        "normalizedToBodyHeight": [
+          0.710145,
+          -0.813406
+        ]
+      },
+      {
+        "frame": 10,
+        "type": "knuckles",
+        "source": [
+          900,
+          687.5
+        ],
+        "offsetFromAnchor": [
+          143.75,
+          -231.5
+        ],
+        "normalizedToBodyHeight": [
+          0.520833,
+          -0.838768
+        ]
+      },
+      {
+        "frame": 12,
+        "type": "knuckles",
+        "source": [
+          296,
+          997.0
+        ],
+        "offsetFromAnchor": [
+          149.5,
+          -231.0
+        ],
+        "normalizedToBodyHeight": [
+          0.541667,
+          -0.836957
+        ]
+      },
+      {
+        "frame": 14,
+        "type": "knuckles",
+        "source": [
+          932,
+          1005.5
+        ],
+        "offsetFromAnchor": [
+          175.0,
+          -217.5
+        ],
+        "normalizedToBodyHeight": [
+          0.634058,
+          -0.788043
+        ]
+      }
+    ]
+  },
+  "measurements": {
+    "giorno-actions-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "1016a7c0a659f2fb6cfd1f9307d445353c6475acbe67df01b07d8d87ab3c62aa",
+      "parts": [
+        {
+          "bbox": [
+            49,
+            15,
+            176,
+            290
+          ],
+          "pixels": 18185,
+          "bottomX": [
+            49,
+            71
+          ],
+          "bottomCenter": 59.72,
+          "center": [
+            137.0,
+            160.0
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            359,
+            14,
+            183,
+            288
+          ],
+          "pixels": 17937,
+          "bottomX": [
+            360,
+            383
+          ],
+          "bottomCenter": 371.14,
+          "center": [
+            450.5,
+            158.0
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            673,
+            13,
+            245,
+            289
+          ],
+          "pixels": 18898,
+          "bottomX": [
+            679,
+            704
+          ],
+          "bottomCenter": 692.42,
+          "center": [
+            795.5,
+            157.5
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            991,
+            15,
+            181,
+            288
+          ],
+          "pixels": 17727,
+          "bottomX": [
+            991,
+            1013
+          ],
+          "bottomCenter": 1001.3,
+          "center": [
+            1081.5,
+            159.0
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            46,
+            327,
+            210,
+            289
+          ],
+          "pixels": 18711,
+          "bottomX": [
+            47,
+            70
+          ],
+          "bottomCenter": 58.27,
+          "center": [
+            151.0,
+            471.5
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            339,
+            327,
+            275,
+            288
+          ],
+          "pixels": 20008,
+          "bottomX": [
+            340,
+            364
+          ],
+          "bottomCenter": 351.56,
+          "center": [
+            476.5,
+            471.0
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            680,
+            326,
+            195,
+            289
+          ],
+          "pixels": 17217,
+          "bottomX": [
+            680,
+            703
+          ],
+          "bottomCenter": 691.16,
+          "center": [
+            777.5,
+            470.5
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            1031,
+            319,
+            125,
+            292
+          ],
+          "pixels": 15928,
+          "bottomX": [
+            1058,
+            1109
+          ],
+          "bottomCenter": 1086.06,
+          "center": [
+            1093.5,
+            465.0
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            19,
+            647,
+            294,
+            281
+          ],
+          "pixels": 17974,
+          "bottomX": [
+            83,
+            121
+          ],
+          "bottomCenter": 97.65,
+          "center": [
+            166.0,
+            787.5
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            414,
+            640,
+            114,
+            285
+          ],
+          "pixels": 15130,
+          "bottomX": [
+            445,
+            496
+          ],
+          "bottomCenter": 473.72,
+          "center": [
+            471.0,
+            782.5
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            662,
+            643,
+            242,
+            285
+          ],
+          "pixels": 18840,
+          "bottomX": [
+            662,
+            865
+          ],
+          "bottomCenter": 702.54,
+          "center": [
+            783.0,
+            785.5
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            991,
+            642,
+            209,
+            287
+          ],
+          "pixels": 18029,
+          "bottomX": [
+            992,
+            1014
+          ],
+          "bottomCenter": 1002.53,
+          "center": [
+            1095.5,
+            785.5
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            29,
+            958,
+            260,
+            282
+          ],
+          "pixels": 19616,
+          "bottomX": [
+            30,
+            52
+          ],
+          "bottomCenter": 40.39,
+          "center": [
+            159.0,
+            1099.0
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            358,
+            982,
+            205,
+            255
+          ],
+          "pixels": 19406,
+          "bottomX": [
+            359,
+            383
+          ],
+          "bottomCenter": 370.71,
+          "center": [
+            460.5,
+            1109.5
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            628,
+            959,
+            308,
+            271
+          ],
+          "pixels": 20114,
+          "bottomX": [
+            629,
+            653
+          ],
+          "bottomCenter": 640.56,
+          "center": [
+            782.0,
+            1094.5
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            989,
+            956,
+            189,
+            284
+          ],
+          "pixels": 17260,
+          "bottomX": [
+            990,
+            1012
+          ],
+          "bottomCenter": 1000.72,
+          "center": [
+            1083.5,
+            1098.0
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "giorno-motion-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "0ac64a2371d4be211bb53fbf34495510e6bccfd22f4d4d34f45fb43a8a39eab4",
+      "parts": [
+        {
+          "bbox": [
+            47,
+            14,
+            184,
+            293
+          ],
+          "pixels": 19067,
+          "bottomX": [
+            48,
+            74
+          ],
+          "bottomCenter": 60.14,
+          "center": [
+            139.0,
+            160.5
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            359,
+            14,
+            185,
+            293
+          ],
+          "pixels": 18835,
+          "bottomX": [
+            360,
+            385
+          ],
+          "bottomCenter": 372.18,
+          "center": [
+            451.5,
+            160.5
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            665,
+            25,
+            226,
+            280
+          ],
+          "pixels": 19826,
+          "bottomX": [
+            835,
+            852
+          ],
+          "bottomCenter": 842.5,
+          "center": [
+            778.0,
+            165.0
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            991,
+            19,
+            181,
+            288
+          ],
+          "pixels": 18776,
+          "bottomX": [
+            999,
+            1027
+          ],
+          "bottomCenter": 1013.74,
+          "center": [
+            1081.5,
+            163.0
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            22,
+            327,
+            253,
+            282
+          ],
+          "pixels": 20694,
+          "bottomX": [
+            218,
+            235
+          ],
+          "bottomCenter": 225.33,
+          "center": [
+            148.5,
+            468.0
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            332,
+            329,
+            265,
+            280
+          ],
+          "pixels": 20387,
+          "bottomX": [
+            543,
+            559
+          ],
+          "bottomCenter": 549.83,
+          "center": [
+            464.5,
+            469.0
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            653,
+            403,
+            197,
+            195
+          ],
+          "pixels": 16984,
+          "bottomX": [
+            654,
+            830
+          ],
+          "bottomCenter": 713.92,
+          "center": [
+            751.5,
+            500.5
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            926,
+            384,
+            310,
+            214
+          ],
+          "pixels": 19827,
+          "bottomX": [
+            927,
+            954
+          ],
+          "bottomCenter": 939.51,
+          "center": [
+            1081.0,
+            491.0
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            36,
+            656,
+            264,
+            264
+          ],
+          "pixels": 20769,
+          "bottomX": [
+            37,
+            63
+          ],
+          "bottomCenter": 49.05,
+          "center": [
+            168.0,
+            788.0
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            399,
+            722,
+            137,
+            199
+          ],
+          "pixels": 15680,
+          "bottomX": [
+            406,
+            433
+          ],
+          "bottomCenter": 419.88,
+          "center": [
+            467.5,
+            821.5
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            661,
+            632,
+            175,
+            289
+          ],
+          "pixels": 18887,
+          "bottomX": [
+            720,
+            732
+          ],
+          "bottomCenter": 726.42,
+          "center": [
+            748.5,
+            776.5
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            972,
+            635,
+            226,
+            214
+          ],
+          "pixels": 15851,
+          "bottomX": [
+            1070,
+            1081
+          ],
+          "bottomCenter": 1076.0,
+          "center": [
+            1085.0,
+            742.0
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            32,
+            932,
+            219,
+            303
+          ],
+          "pixels": 19433,
+          "bottomX": [
+            152,
+            168
+          ],
+          "bottomCenter": 160.73,
+          "center": [
+            141.5,
+            1083.5
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            351,
+            1034,
+            196,
+            185
+          ],
+          "pixels": 16311,
+          "bottomX": [
+            352,
+            542
+          ],
+          "bottomCenter": 396.08,
+          "center": [
+            449.0,
+            1126.5
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            674,
+            948,
+            203,
+            282
+          ],
+          "pixels": 18152,
+          "bottomX": [
+            675,
+            701
+          ],
+          "bottomCenter": 687.21,
+          "center": [
+            775.5,
+            1089.0
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            990,
+            957,
+            202,
+            266
+          ],
+          "pixels": 20115,
+          "bottomX": [
+            1018,
+            1045
+          ],
+          "bottomCenter": 1031.21,
+          "center": [
+            1091.0,
+            1090.0
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "kira-actions-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "232a52e37d5e3bc35c5f5d89dded40cae902c7f2b938c305d12d8b2147629243",
+      "parts": [
+        {
+          "bbox": [
+            74,
+            21,
+            164,
+            275
+          ],
+          "pixels": 17797,
+          "bottomX": [
+            74,
+            98
+          ],
+          "bottomCenter": 86.43,
+          "center": [
+            156.0,
+            158.5
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            377,
+            18,
+            174,
+            278
+          ],
+          "pixels": 18395,
+          "bottomX": [
+            377,
+            544
+          ],
+          "bottomCenter": 412.3,
+          "center": [
+            464.0,
+            157.0
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            678,
+            23,
+            233,
+            272
+          ],
+          "pixels": 18324,
+          "bottomX": [
+            686,
+            849
+          ],
+          "bottomCenter": 723.74,
+          "center": [
+            794.5,
+            159.0
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            1010,
+            17,
+            166,
+            279
+          ],
+          "pixels": 18070,
+          "bottomX": [
+            1010,
+            1169
+          ],
+          "bottomCenter": 1043.57,
+          "center": [
+            1093.0,
+            156.5
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            61,
+            330,
+            195,
+            281
+          ],
+          "pixels": 21071,
+          "bottomX": [
+            61,
+            84
+          ],
+          "bottomCenter": 71.81,
+          "center": [
+            158.5,
+            470.5
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            359,
+            329,
+            245,
+            281
+          ],
+          "pixels": 19900,
+          "bottomX": [
+            364,
+            545
+          ],
+          "bottomCenter": 403.45,
+          "center": [
+            481.5,
+            469.5
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            696,
+            330,
+            168,
+            279
+          ],
+          "pixels": 18119,
+          "bottomX": [
+            696,
+            855
+          ],
+          "bottomCenter": 724.49,
+          "center": [
+            780.0,
+            469.5
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            1028,
+            321,
+            121,
+            291
+          ],
+          "pixels": 16467,
+          "bottomX": [
+            1064,
+            1111
+          ],
+          "bottomCenter": 1090.47,
+          "center": [
+            1088.5,
+            466.5
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            29,
+            645,
+            270,
+            273
+          ],
+          "pixels": 19563,
+          "bottomX": [
+            81,
+            116
+          ],
+          "bottomCenter": 94.96,
+          "center": [
+            164.0,
+            781.5
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            409,
+            638,
+            124,
+            284
+          ],
+          "pixels": 16573,
+          "bottomX": [
+            453,
+            483
+          ],
+          "bottomCenter": 468.65,
+          "center": [
+            471.0,
+            780.0
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            669,
+            643,
+            232,
+            276
+          ],
+          "pixels": 20073,
+          "bottomX": [
+            669,
+            695
+          ],
+          "bottomCenter": 682.3,
+          "center": [
+            785.0,
+            781.0
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            988,
+            643,
+            202,
+            276
+          ],
+          "pixels": 20742,
+          "bottomX": [
+            988,
+            1011
+          ],
+          "bottomCenter": 999.88,
+          "center": [
+            1089.0,
+            781.0
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            58,
+            956,
+            239,
+            272
+          ],
+          "pixels": 20433,
+          "bottomX": [
+            58,
+            85
+          ],
+          "bottomCenter": 71.97,
+          "center": [
+            177.5,
+            1092.0
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            364,
+            983,
+            198,
+            244
+          ],
+          "pixels": 20886,
+          "bottomX": [
+            368,
+            394
+          ],
+          "bottomCenter": 381.13,
+          "center": [
+            463.0,
+            1105.0
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            627,
+            962,
+            306,
+            261
+          ],
+          "pixels": 20872,
+          "bottomX": [
+            627,
+            655
+          ],
+          "bottomCenter": 640.89,
+          "center": [
+            780.0,
+            1092.5
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            998,
+            954,
+            187,
+            274
+          ],
+          "pixels": 18844,
+          "bottomX": [
+            998,
+            1023
+          ],
+          "bottomCenter": 1011.0,
+          "center": [
+            1091.5,
+            1091.0
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "kira-motion-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "efda92bd035dfbf734480478ae542fa55b9a1a4599a876b20f843cb6cb0eecd1",
+      "parts": [
+        {
+          "bbox": [
+            74,
+            20,
+            164,
+            276
+          ],
+          "pixels": 17983,
+          "bottomX": [
+            74,
+            98
+          ],
+          "bottomCenter": 86.05,
+          "center": [
+            156.0,
+            158.0
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            375,
+            20,
+            176,
+            276
+          ],
+          "pixels": 18592,
+          "bottomX": [
+            375,
+            541
+          ],
+          "bottomCenter": 406.31,
+          "center": [
+            463.0,
+            158.0
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            643,
+            24,
+            250,
+            259
+          ],
+          "pixels": 21471,
+          "bottomX": [
+            835,
+            881
+          ],
+          "bottomCenter": 853.8,
+          "center": [
+            768.0,
+            153.5
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            982,
+            20,
+            195,
+            275
+          ],
+          "pixels": 18498,
+          "bottomX": [
+            1129,
+            1143
+          ],
+          "bottomCenter": 1135.21,
+          "center": [
+            1079.5,
+            157.5
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            35,
+            329,
+            213,
+            258
+          ],
+          "pixels": 20284,
+          "bottomX": [
+            40,
+            245
+          ],
+          "bottomCenter": 179.88,
+          "center": [
+            141.5,
+            458.0
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            357,
+            329,
+            235,
+            264
+          ],
+          "pixels": 20549,
+          "bottomX": [
+            539,
+            585
+          ],
+          "bottomCenter": 559.51,
+          "center": [
+            474.5,
+            461.0
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            675,
+            390,
+            165,
+            202
+          ],
+          "pixels": 16627,
+          "bottomX": [
+            695,
+            724
+          ],
+          "bottomCenter": 709.55,
+          "center": [
+            757.5,
+            491.0
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            946,
+            387,
+            287,
+            194
+          ],
+          "pixels": 18943,
+          "bottomX": [
+            952,
+            967
+          ],
+          "bottomCenter": 960.68,
+          "center": [
+            1089.5,
+            484.0
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            50,
+            648,
+            241,
+            245
+          ],
+          "pixels": 21701,
+          "bottomX": [
+            50,
+            257
+          ],
+          "bottomCenter": 101.72,
+          "center": [
+            170.5,
+            770.5
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            403,
+            708,
+            138,
+            186
+          ],
+          "pixels": 15733,
+          "bottomX": [
+            408,
+            435
+          ],
+          "bottomCenter": 421.66,
+          "center": [
+            472.0,
+            801.0
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            657,
+            615,
+            192,
+            274
+          ],
+          "pixels": 19468,
+          "bottomX": [
+            741,
+            752
+          ],
+          "bottomCenter": 746.79,
+          "center": [
+            753.0,
+            752.0
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            963,
+            621,
+            257,
+            199
+          ],
+          "pixels": 17740,
+          "bottomX": [
+            1082,
+            1100
+          ],
+          "bottomCenter": 1091.46,
+          "center": [
+            1091.5,
+            720.5
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            35,
+            910,
+            239,
+            301
+          ],
+          "pixels": 21876,
+          "bottomX": [
+            178,
+            192
+          ],
+          "bottomCenter": 186.27,
+          "center": [
+            154.5,
+            1060.5
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            374,
+            1028,
+            182,
+            174
+          ],
+          "pixels": 17425,
+          "bottomX": [
+            375,
+            554
+          ],
+          "bottomCenter": 458.44,
+          "center": [
+            465.0,
+            1115.0
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            681,
+            931,
+            192,
+            275
+          ],
+          "pixels": 19287,
+          "bottomX": [
+            681,
+            708
+          ],
+          "bottomCenter": 694.85,
+          "center": [
+            777.0,
+            1068.5
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            1000,
+            942,
+            210,
+            262
+          ],
+          "pixels": 22766,
+          "bottomX": [
+            1008,
+            1037
+          ],
+          "bottomCenter": 1023.61,
+          "center": [
+            1105.0,
+            1073.0
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "gold-experience-strike-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "5f573439ee1c3082361597e2a0064fd3b668fa05e9f8096a892f8e330ff3e3f6",
+      "parts": [
+        {
+          "bbox": [
+            72,
+            33,
+            1149,
+            1178
+          ],
+          "pixels": 314440,
+          "bottomX": [
+            110,
+            134
+          ],
+          "bottomCenter": 121.75,
+          "center": [
+            646.5,
+            622.0
+          ]
+        }
+      ]
+    },
+    "killer-queen-strike-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "651f9a027bb9220fdc4861e0f74a7d745f4796b8e4e08507ff93a15a000bb814",
+      "parts": [
+        {
+          "bbox": [
+            62,
+            34,
+            1146,
+            1184
+          ],
+          "pixels": 345872,
+          "bottomX": [
+            82,
+            135
+          ],
+          "bottomCenter": 107.88,
+          "center": [
+            635.0,
+            626.0
+          ]
+        }
+      ]
+    },
+    "giorno-kira-prone-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "4aa6c14350dffc43f8df1b98022d45907cf6983bd80a5fa87b0126e1f87168dc",
+      "parts": [
+        {
+          "bbox": [
+            68,
+            292,
+            1120,
+            216
+          ],
+          "pixels": 154497,
+          "bottomX": [
+            626,
+            657
+          ],
+          "bottomCenter": 641.85,
+          "center": [
+            628.0,
+            400.0
+          ]
+        },
+        {
+          "bbox": [
+            75,
+            805,
+            1112,
+            238
+          ],
+          "pixels": 169519,
+          "bottomX": [
+            624,
+            735
+          ],
+          "bottomCenter": 667.54,
+          "center": [
+            631.0,
+            924.0
+          ]
+        }
+      ]
+    }
+  },
+  "references": [
+    {
+      "src": "assets/jojo/references/giorno-official.png",
+      "url": "https://jojo-portal.com/wp-content/themes/jojo-portal/4th/assets/images/common/character/01/img_chara.png",
+      "page": "https://jojo-portal.com/anime/gw/character/01/",
+      "width": 1400,
+      "height": 2000,
+      "mode": "P",
+      "sha256": "342285ba0d61c746a7e9b2bd2df2df73bffffdd625290a0fdbaf4f4c841affc9"
+    },
+    {
+      "src": "assets/jojo/references/gold-experience-official.png",
+      "url": "https://jojo-portal.com/wp-content/themes/jojo-portal/4th/assets/images/common/character/01/img_stand.png",
+      "page": "https://jojo-portal.com/anime/gw/character/01/",
+      "width": 1400,
+      "height": 2000,
+      "mode": "P",
+      "sha256": "17921816a7e84db7ab6c2fdb93bf023e663911ded81d38b4a473bb1c1a1f2e5d"
+    },
+    {
+      "src": "assets/jojo/references/kira-official.png",
+      "url": "https://jojo-portal.com/wp-content/themes/jojo-portal/3rd/assets/images/common/character/32/img_chara.png",
+      "page": "https://jojo-portal.com/anime/du/character/32/",
+      "width": 1400,
+      "height": 2000,
+      "mode": "P",
+      "sha256": "812e7bae28e11abf15439ca1d4a1369c4ba0d2e3790bf4a35cb627a45fedc9d9"
+    },
+    {
+      "src": "assets/jojo/references/killer-queen-official.png",
+      "url": "https://jojo-portal.com/wp-content/themes/jojo-portal/3rd/assets/images/common/character/32/img_stand_01.png",
+      "page": "https://jojo-portal.com/anime/du/character/32/",
+      "width": 1400,
+      "height": 2000,
+      "mode": "P",
+      "sha256": "0f25a83ea2235891de44a79f2875e12608752cc13a8b3b6009944e036ada58d8"
+    }
+  ]
+}

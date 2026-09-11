@@ -1,0 +1,2435 @@
+{
+  "version": "pucci-okuyasu-expansion-v1",
+  "date": "2026-09-11",
+  "generator": "built-in imagegen; model version not selected or verified",
+  "method": "Images read without editing. Connected-component measurements use existing magenta core threshold. Crops retain complete silhouettes plus 2px padding; fixed action/motion sourceHeight preserves anatomy. All frame alignment is translation only. Running follows pelvis; rise/apex use a virtual foot plane; falling aligns visible sole. These are visual-review suggestions for integration, not per-frame stretching. frameIsolation seeds are global source coordinates and require runtime connected-component isolation on the original cached atlas for listed overlapping rectangular crops.",
+  "sprites": {
+    "pucci": {
+      "src": "assets/jojo/generated/pucci-actions-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "version": "expansion-v1",
+      "chromaKey": "magenta",
+      "sourceHeight": 290,
+      "frameRects": [
+        [
+          46,
+          8,
+          201,
+          294
+        ],
+        [
+          340,
+          9,
+          259,
+          293
+        ],
+        [
+          642,
+          15,
+          283,
+          287
+        ],
+        [
+          963,
+          10,
+          205,
+          292
+        ],
+        [
+          39,
+          328,
+          235,
+          284
+        ],
+        [
+          332,
+          325,
+          296,
+          287
+        ],
+        [
+          648,
+          325,
+          224,
+          288
+        ],
+        [
+          986,
+          319,
+          168,
+          290
+        ],
+        [
+          24,
+          641,
+          292,
+          282
+        ],
+        [
+          403,
+          631,
+          144,
+          291
+        ],
+        [
+          650,
+          634,
+          255,
+          290
+        ],
+        [
+          962,
+          637,
+          248,
+          286
+        ],
+        [
+          20,
+          942,
+          283,
+          287
+        ],
+        [
+          335,
+          989,
+          277,
+          239
+        ],
+        [
+          646,
+          955,
+          331,
+          270
+        ],
+        [
+          964,
+          944,
+          227,
+          286
+        ]
+      ],
+      "frameAnchors": [
+        [
+          93.25,
+          292
+        ],
+        [
+          103.25,
+          291
+        ],
+        [
+          103.5,
+          285
+        ],
+        [
+          95.0,
+          290
+        ],
+        [
+          109.75,
+          282
+        ],
+        [
+          113.0,
+          285
+        ],
+        [
+          104.25,
+          286
+        ],
+        [
+          81.0,
+          288
+        ],
+        [
+          74.0,
+          280
+        ],
+        [
+          60.0,
+          289
+        ],
+        [
+          110.75,
+          288
+        ],
+        [
+          116.75,
+          284
+        ],
+        [
+          120.75,
+          285
+        ],
+        [
+          127.5,
+          237
+        ],
+        [
+          120.5,
+          268
+        ],
+        [
+          106.0,
+          284
+        ]
+      ],
+      "frameIsolation": {
+        "14": [
+          864,
+          1100
+        ],
+        "15": [
+          1128,
+          1108
+        ]
+      },
+      "isolationRequired": [
+        {
+          "frame": 14,
+          "foreignPixels": {
+            "15": 160
+          },
+          "componentSeed": [
+            218,
+            145
+          ]
+        },
+        {
+          "frame": 15,
+          "foreignPixels": {
+            "14": 228
+          },
+          "componentSeed": [
+            164,
+            164
+          ]
+        }
+      ],
+      "motion": {
+        "src": "assets/jojo/generated/pucci-motion-v1.png",
+        "columns": 4,
+        "rows": 4,
+        "version": "expansion-v1",
+        "chromaKey": "magenta",
+        "sourceHeight": 290,
+        "frameRects": [
+          [
+            46,
+            8,
+            202,
+            294
+          ],
+          [
+            344,
+            14,
+            206,
+            288
+          ],
+          [
+            629,
+            26,
+            274,
+            272
+          ],
+          [
+            969,
+            14,
+            205,
+            288
+          ],
+          [
+            10,
+            332,
+            280,
+            271
+          ],
+          [
+            355,
+            324,
+            208,
+            285
+          ],
+          [
+            633,
+            401,
+            238,
+            202
+          ],
+          [
+            915,
+            378,
+            302,
+            228
+          ],
+          [
+            24,
+            654,
+            259,
+            269
+          ],
+          [
+            342,
+            745,
+            199,
+            178
+          ],
+          [
+            689,
+            618,
+            195,
+            314
+          ],
+          [
+            958,
+            642,
+            260,
+            220
+          ],
+          [
+            28,
+            940,
+            234,
+            286
+          ],
+          [
+            346,
+            1035,
+            214,
+            191
+          ],
+          [
+            651,
+            955,
+            248,
+            271
+          ],
+          [
+            984,
+            940,
+            246,
+            286
+          ]
+        ],
+        "frameAnchors": [
+          [
+            93.75,
+            292
+          ],
+          [
+            96.25,
+            286
+          ],
+          [
+            151,
+            270
+          ],
+          [
+            116,
+            286
+          ],
+          [
+            153,
+            269
+          ],
+          [
+            115,
+            283
+          ],
+          [
+            137,
+            200
+          ],
+          [
+            165,
+            226
+          ],
+          [
+            120.25,
+            267
+          ],
+          [
+            106,
+            176
+          ],
+          [
+            91,
+            292
+          ],
+          [
+            132,
+            268
+          ],
+          [
+            128,
+            284
+          ],
+          [
+            107,
+            189
+          ],
+          [
+            116.5,
+            269
+          ],
+          [
+            118.0,
+            284
+          ]
+        ]
+      },
+      "knockdown": {
+        "src": "assets/jojo/generated/pucci-okuyasu-prone-v1.png",
+        "columns": 1,
+        "rows": 1,
+        "version": "expansion-prone-v1",
+        "chromaKey": "magenta",
+        "sourceHeight": 1164,
+        "frameRects": [
+          [
+            42,
+            250,
+            1168,
+            283
+          ]
+        ],
+        "frameAnchors": [
+          [
+            2,
+            281
+          ]
+        ]
+      }
+    },
+    "okuyasu": {
+      "src": "assets/jojo/generated/okuyasu-actions-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "version": "expansion-v1",
+      "chromaKey": "magenta",
+      "sourceHeight": 279,
+      "frameRects": [
+        [
+          34,
+          15,
+          227,
+          283
+        ],
+        [
+          345,
+          13,
+          227,
+          285
+        ],
+        [
+          656,
+          16,
+          271,
+          282
+        ],
+        [
+          968,
+          13,
+          227,
+          285
+        ],
+        [
+          34,
+          328,
+          243,
+          283
+        ],
+        [
+          344,
+          328,
+          280,
+          283
+        ],
+        [
+          656,
+          327,
+          231,
+          284
+        ],
+        [
+          1012,
+          319,
+          166,
+          292
+        ],
+        [
+          30,
+          633,
+          280,
+          291
+        ],
+        [
+          405,
+          630,
+          143,
+          294
+        ],
+        [
+          649,
+          637,
+          253,
+          287
+        ],
+        [
+          968,
+          641,
+          249,
+          283
+        ],
+        [
+          34,
+          953,
+          289,
+          281
+        ],
+        [
+          345,
+          990,
+          243,
+          244
+        ],
+        [
+          635,
+          956,
+          315,
+          277
+        ],
+        [
+          968,
+          948,
+          230,
+          286
+        ]
+      ],
+      "frameAnchors": [
+        [
+          107.75,
+          281
+        ],
+        [
+          107.75,
+          283
+        ],
+        [
+          109.75,
+          280
+        ],
+        [
+          107.25,
+          283
+        ],
+        [
+          116.75,
+          281
+        ],
+        [
+          108.5,
+          281
+        ],
+        [
+          110.0,
+          282
+        ],
+        [
+          38.0,
+          290
+        ],
+        [
+          48.5,
+          289
+        ],
+        [
+          34.5,
+          292
+        ],
+        [
+          111.75,
+          285
+        ],
+        [
+          119.0,
+          281
+        ],
+        [
+          114.75,
+          279
+        ],
+        [
+          115.75,
+          242
+        ],
+        [
+          120.5,
+          275
+        ],
+        [
+          109.5,
+          284
+        ]
+      ],
+      "motion": {
+        "src": "assets/jojo/generated/okuyasu-motion-v1.png",
+        "columns": 4,
+        "rows": 4,
+        "version": "expansion-v1",
+        "chromaKey": "magenta",
+        "sourceHeight": 279,
+        "frameRects": [
+          [
+            35,
+            15,
+            227,
+            283
+          ],
+          [
+            343,
+            15,
+            222,
+            284
+          ],
+          [
+            639,
+            33,
+            274,
+            265
+          ],
+          [
+            978,
+            18,
+            193,
+            285
+          ],
+          [
+            28,
+            322,
+            284,
+            282
+          ],
+          [
+            364,
+            325,
+            215,
+            283
+          ],
+          [
+            638,
+            394,
+            215,
+            212
+          ],
+          [
+            906,
+            379,
+            301,
+            216
+          ],
+          [
+            23,
+            655,
+            266,
+            257
+          ],
+          [
+            374,
+            725,
+            172,
+            189
+          ],
+          [
+            717,
+            628,
+            184,
+            258
+          ],
+          [
+            994,
+            647,
+            197,
+            203
+          ],
+          [
+            53,
+            939,
+            222,
+            254
+          ],
+          [
+            332,
+            1031,
+            238,
+            184
+          ],
+          [
+            656,
+            936,
+            237,
+            281
+          ],
+          [
+            996,
+            935,
+            217,
+            282
+          ]
+        ],
+        "frameAnchors": [
+          [
+            107.75,
+            281
+          ],
+          [
+            105.0,
+            282
+          ],
+          [
+            141,
+            263
+          ],
+          [
+            112,
+            283
+          ],
+          [
+            137,
+            280
+          ],
+          [
+            111,
+            281
+          ],
+          [
+            127,
+            210
+          ],
+          [
+            176,
+            214
+          ],
+          [
+            126.0,
+            255
+          ],
+          [
+            89,
+            187
+          ],
+          [
+            83,
+            282
+          ],
+          [
+            96,
+            263
+          ],
+          [
+            98,
+            252
+          ],
+          [
+            118,
+            182
+          ],
+          [
+            112.25,
+            279
+          ],
+          [
+            102.25,
+            280
+          ]
+        ]
+      },
+      "knockdown": {
+        "src": "assets/jojo/generated/pucci-okuyasu-prone-v1.png",
+        "columns": 1,
+        "rows": 1,
+        "version": "expansion-prone-v1",
+        "chromaKey": "magenta",
+        "sourceHeight": 1174,
+        "frameRects": [
+          [
+            38,
+            788,
+            1178,
+            271
+          ]
+        ],
+        "frameAnchors": [
+          [
+            2,
+            269
+          ]
+        ]
+      }
+    }
+  },
+  "bodies": {
+    "pucci": {
+      "src": "assets/jojo/generated/pucci-actions-v1.png",
+      "rect": [
+        46,
+        8,
+        201,
+        294
+      ],
+      "sourceHeight": 290,
+      "anchorX": 139.25,
+      "anchorY": 300,
+      "nativeFace": 1,
+      "chromaKey": "magenta"
+    },
+    "okuyasu": {
+      "src": "assets/jojo/generated/okuyasu-actions-v1.png",
+      "rect": [
+        34,
+        15,
+        227,
+        283
+      ],
+      "sourceHeight": 279,
+      "anchorX": 141.75,
+      "anchorY": 296,
+      "nativeFace": 1,
+      "chromaKey": "magenta"
+    }
+  },
+  "stands": {
+    "pucci": {
+      "id": "made-in-heaven",
+      "src": "assets/jojo/generated/made-in-heaven-strike-v1.png",
+      "rect": [
+        228,
+        12,
+        966,
+        1226
+      ],
+      "sourceHeight": 1222,
+      "anchorX": 604,
+      "anchorY": 1236,
+      "nativeFace": 1,
+      "chromaKey": "magenta",
+      "knuckle": [
+        1191,
+        274.5
+      ],
+      "fistL": [
+        1191,
+        274.5
+      ],
+      "note": "Source-pixel contact on forward finger tips."
+    },
+    "okuyasu": {
+      "id": "the-hand",
+      "src": "assets/jojo/generated/the-hand-strike-v1.png",
+      "rect": [
+        91,
+        26,
+        1113,
+        1191
+      ],
+      "sourceHeight": 1187,
+      "anchorX": 620,
+      "anchorY": 1215,
+      "nativeFace": 1,
+      "chromaKey": "magenta",
+      "knuckle": [
+        1154,
+        245
+      ],
+      "fistL": [
+        1154,
+        245
+      ],
+      "note": "Contact at the forward edge of open palm, not raised fingertips. Palm center approximately [1110,245]; extreme fingertip edge [1201,154]."
+    }
+  },
+  "normalContactCalibration": {
+    "pucci": [
+      {
+        "frame": 2,
+        "type": "knuckles",
+        "source": [
+          922,
+          62.0
+        ],
+        "offsetFromAnchor": [
+          176.5,
+          -238.0
+        ],
+        "normalizedToBodyHeight": [
+          0.608621,
+          -0.82069
+        ]
+      },
+      {
+        "frame": 5,
+        "type": "knuckles",
+        "source": [
+          625,
+          375.5
+        ],
+        "offsetFromAnchor": [
+          180.0,
+          -234.5
+        ],
+        "normalizedToBodyHeight": [
+          0.62069,
+          -0.808621
+        ]
+      },
+      {
+        "frame": 8,
+        "type": "foot",
+        "source": [
+          313,
+          691.0
+        ],
+        "offsetFromAnchor": [
+          215.0,
+          -230.0
+        ],
+        "normalizedToBodyHeight": [
+          0.741379,
+          -0.793103
+        ]
+      },
+      {
+        "frame": 10,
+        "type": "knuckles",
+        "source": [
+          902,
+          683.5
+        ],
+        "offsetFromAnchor": [
+          141.25,
+          -238.5
+        ],
+        "normalizedToBodyHeight": [
+          0.487069,
+          -0.822414
+        ]
+      },
+      {
+        "frame": 12,
+        "type": "knuckles",
+        "source": [
+          300,
+          997.5
+        ],
+        "offsetFromAnchor": [
+          159.25,
+          -229.5
+        ],
+        "normalizedToBodyHeight": [
+          0.549138,
+          -0.791379
+        ]
+      },
+      {
+        "frame": 14,
+        "type": "knuckles",
+        "source": [
+          974,
+          1000.5
+        ],
+        "offsetFromAnchor": [
+          207.5,
+          -222.5
+        ],
+        "normalizedToBodyHeight": [
+          0.715517,
+          -0.767241
+        ]
+      }
+    ],
+    "okuyasu": [
+      {
+        "frame": 2,
+        "type": "knuckles",
+        "source": [
+          924,
+          65.0
+        ],
+        "offsetFromAnchor": [
+          158.25,
+          -231.0
+        ],
+        "normalizedToBodyHeight": [
+          0.567204,
+          -0.827957
+        ]
+      },
+      {
+        "frame": 5,
+        "type": "knuckles",
+        "source": [
+          621,
+          380.0
+        ],
+        "offsetFromAnchor": [
+          168.5,
+          -229.0
+        ],
+        "normalizedToBodyHeight": [
+          0.603943,
+          -0.820789
+        ]
+      },
+      {
+        "frame": 8,
+        "type": "foot",
+        "source": [
+          307,
+          696.5
+        ],
+        "offsetFromAnchor": [
+          228.5,
+          -225.5
+        ],
+        "normalizedToBodyHeight": [
+          0.818996,
+          -0.808244
+        ]
+      },
+      {
+        "frame": 10,
+        "type": "knuckles",
+        "source": [
+          899,
+          692.5
+        ],
+        "offsetFromAnchor": [
+          138.25,
+          -229.5
+        ],
+        "normalizedToBodyHeight": [
+          0.49552,
+          -0.822581
+        ]
+      },
+      {
+        "frame": 12,
+        "type": "knuckles",
+        "source": [
+          320,
+          1002.5
+        ],
+        "offsetFromAnchor": [
+          171.25,
+          -229.5
+        ],
+        "normalizedToBodyHeight": [
+          0.613799,
+          -0.822581
+        ]
+      },
+      {
+        "frame": 14,
+        "type": "knuckles",
+        "source": [
+          947,
+          1002.0
+        ],
+        "offsetFromAnchor": [
+          191.5,
+          -229.0
+        ],
+        "normalizedToBodyHeight": [
+          0.68638,
+          -0.820789
+        ]
+      }
+    ]
+  },
+  "visualReview": {
+    "allFourCharacterGroups": "Giorno/Kira/Pucci/Okuyasu action and motion groups visually reviewed; no obvious anatomy scale/model replacement between the related sheets. These are generated interpretations, not pixel-exact original anime frames.",
+    "pucci": "Long cassock and final pale angular hair maintained. Forehead star is small/simplified. Action14/15 silhouettes do not touch, but their rectangular bounds overlap: isolate runtime components to prevent adjacent shoe/fist contamination.",
+    "okuyasu": "Navy uniform, currency symbols, green belts and shoes maintained. Official sleeve OKUYASU lettering is omitted by generated images; root notified, images left unchanged."
+  },
+  "measurements": {
+    "pucci-actions-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "a1cedf742d6855562e8c4e1f431b03461b717557501a809eff6dc1d879400446",
+      "parts": [
+        {
+          "bbox": [
+            48,
+            10,
+            197,
+            290
+          ],
+          "pixels": 26398,
+          "bottomX": [
+            48,
+            241
+          ],
+          "bottomCenter": 89.23,
+          "center": [
+            146.5,
+            155.0
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            342,
+            11,
+            255,
+            289
+          ],
+          "pixels": 27778,
+          "bottomX": [
+            342,
+            371
+          ],
+          "bottomCenter": 356.74,
+          "center": [
+            469.5,
+            155.5
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            644,
+            17,
+            279,
+            283
+          ],
+          "pixels": 27792,
+          "bottomX": [
+            645,
+            851
+          ],
+          "bottomCenter": 667.46,
+          "center": [
+            783.5,
+            158.5
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            965,
+            12,
+            201,
+            288
+          ],
+          "pixels": 25745,
+          "bottomX": [
+            965,
+            994
+          ],
+          "bottomCenter": 979.55,
+          "center": [
+            1065.5,
+            156.0
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            41,
+            330,
+            231,
+            280
+          ],
+          "pixels": 28895,
+          "bottomX": [
+            41,
+            71
+          ],
+          "bottomCenter": 56.07,
+          "center": [
+            156.5,
+            470.0
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            334,
+            327,
+            292,
+            283
+          ],
+          "pixels": 29271,
+          "bottomX": [
+            334,
+            365
+          ],
+          "bottomCenter": 349.38,
+          "center": [
+            480.0,
+            468.5
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            650,
+            327,
+            220,
+            284
+          ],
+          "pixels": 27283,
+          "bottomX": [
+            650,
+            680
+          ],
+          "bottomCenter": 664.94,
+          "center": [
+            760.0,
+            469.0
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            988,
+            321,
+            164,
+            286
+          ],
+          "pixels": 23175,
+          "bottomX": [
+            1037,
+            1097
+          ],
+          "bottomCenter": 1070.13,
+          "center": [
+            1070.0,
+            464.0
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            26,
+            643,
+            288,
+            278
+          ],
+          "pixels": 28001,
+          "bottomX": [
+            80,
+            114
+          ],
+          "bottomCenter": 96.52,
+          "center": [
+            170.0,
+            782.0
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            405,
+            633,
+            140,
+            287
+          ],
+          "pixels": 21705,
+          "bottomX": [
+            434,
+            492
+          ],
+          "bottomCenter": 465.62,
+          "center": [
+            475.0,
+            776.5
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            652,
+            636,
+            251,
+            286
+          ],
+          "pixels": 28556,
+          "bottomX": [
+            652,
+            682
+          ],
+          "bottomCenter": 667.0,
+          "center": [
+            777.5,
+            779.0
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            964,
+            639,
+            244,
+            282
+          ],
+          "pixels": 29539,
+          "bottomX": [
+            965,
+            994
+          ],
+          "bottomCenter": 979.43,
+          "center": [
+            1086.0,
+            780.0
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            22,
+            944,
+            279,
+            283
+          ],
+          "pixels": 30695,
+          "bottomX": [
+            22,
+            53
+          ],
+          "bottomCenter": 37.06,
+          "center": [
+            161.5,
+            1085.5
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            337,
+            991,
+            273,
+            235
+          ],
+          "pixels": 32663,
+          "bottomX": [
+            337,
+            370
+          ],
+          "bottomCenter": 353.5,
+          "center": [
+            473.5,
+            1108.5
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            648,
+            957,
+            327,
+            266
+          ],
+          "pixels": 31295,
+          "bottomX": [
+            659,
+            899
+          ],
+          "bottomCenter": 791.59,
+          "center": [
+            811.5,
+            1090.0
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            966,
+            946,
+            223,
+            282
+          ],
+          "pixels": 27038,
+          "bottomX": [
+            966,
+            997
+          ],
+          "bottomCenter": 981.56,
+          "center": [
+            1077.5,
+            1087.0
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "pucci-motion-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "bee3f0d9ac9ac2cb97752ce80c036b63be20e3788d3c3aca379f5c4182995aef",
+      "parts": [
+        {
+          "bbox": [
+            48,
+            10,
+            198,
+            290
+          ],
+          "pixels": 26506,
+          "bottomX": [
+            48,
+            240
+          ],
+          "bottomCenter": 86.84,
+          "center": [
+            147.0,
+            155.0
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            346,
+            16,
+            202,
+            284
+          ],
+          "pixels": 25944,
+          "bottomX": [
+            346,
+            542
+          ],
+          "bottomCenter": 386.55,
+          "center": [
+            447.0,
+            158.0
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            631,
+            28,
+            270,
+            268
+          ],
+          "pixels": 31757,
+          "bottomX": [
+            826,
+            885
+          ],
+          "bottomCenter": 861.94,
+          "center": [
+            766.0,
+            162.0
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            971,
+            16,
+            201,
+            284
+          ],
+          "pixels": 25754,
+          "bottomX": [
+            988,
+            1018
+          ],
+          "bottomCenter": 1003.98,
+          "center": [
+            1071.5,
+            158.0
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            12,
+            334,
+            276,
+            267
+          ],
+          "pixels": 32611,
+          "bottomX": [
+            228,
+            287
+          ],
+          "bottomCenter": 262.07,
+          "center": [
+            150.0,
+            467.5
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            357,
+            326,
+            204,
+            281
+          ],
+          "pixels": 26094,
+          "bottomX": [
+            378,
+            411
+          ],
+          "bottomCenter": 395.7,
+          "center": [
+            459.0,
+            466.5
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            635,
+            403,
+            234,
+            198
+          ],
+          "pixels": 25655,
+          "bottomX": [
+            644,
+            672
+          ],
+          "bottomCenter": 659.66,
+          "center": [
+            752.0,
+            502.0
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            917,
+            380,
+            298,
+            224
+          ],
+          "pixels": 28061,
+          "bottomX": [
+            924,
+            942
+          ],
+          "bottomCenter": 933.89,
+          "center": [
+            1066.0,
+            492.0
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            26,
+            656,
+            255,
+            265
+          ],
+          "pixels": 30528,
+          "bottomX": [
+            26,
+            275
+          ],
+          "bottomCenter": 121.86,
+          "center": [
+            153.5,
+            788.5
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            344,
+            747,
+            195,
+            174
+          ],
+          "pixels": 19978,
+          "bottomX": [
+            376,
+            537
+          ],
+          "bottomCenter": 429.94,
+          "center": [
+            441.5,
+            834.0
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            691,
+            620,
+            191,
+            310
+          ],
+          "pixels": 23025,
+          "bottomX": [
+            748,
+            764
+          ],
+          "bottomCenter": 756.58,
+          "center": [
+            786.5,
+            775.0
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            960,
+            644,
+            256,
+            216
+          ],
+          "pixels": 19854,
+          "bottomX": [
+            1065,
+            1101
+          ],
+          "bottomCenter": 1074.33,
+          "center": [
+            1088.0,
+            752.0
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            30,
+            942,
+            230,
+            282
+          ],
+          "pixels": 24247,
+          "bottomX": [
+            150,
+            171
+          ],
+          "bottomCenter": 161.35,
+          "center": [
+            145.0,
+            1083.0
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            348,
+            1037,
+            210,
+            187
+          ],
+          "pixels": 24536,
+          "bottomX": [
+            348,
+            381
+          ],
+          "bottomCenter": 364.57,
+          "center": [
+            453.0,
+            1130.5
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            653,
+            957,
+            244,
+            267
+          ],
+          "pixels": 27886,
+          "bottomX": [
+            653,
+            895
+          ],
+          "bottomCenter": 733.31,
+          "center": [
+            775.0,
+            1090.5
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            986,
+            942,
+            242,
+            282
+          ],
+          "pixels": 31732,
+          "bottomX": [
+            990,
+            1227
+          ],
+          "bottomCenter": 1079.42,
+          "center": [
+            1107.0,
+            1083.0
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "okuyasu-actions-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "4be58305ae00988c6c631d92e8b27e83ccf8430d6df367b9a62a32cf32f11cd5",
+      "parts": [
+        {
+          "bbox": [
+            36,
+            17,
+            223,
+            279
+          ],
+          "pixels": 23895,
+          "bottomX": [
+            36,
+            253
+          ],
+          "bottomCenter": 106.76,
+          "center": [
+            147.5,
+            156.5
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            347,
+            15,
+            223,
+            281
+          ],
+          "pixels": 23561,
+          "bottomX": [
+            347,
+            565
+          ],
+          "bottomCenter": 416.54,
+          "center": [
+            458.5,
+            155.5
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            658,
+            18,
+            267,
+            278
+          ],
+          "pixels": 23901,
+          "bottomX": [
+            658,
+            879
+          ],
+          "bottomCenter": 729.77,
+          "center": [
+            791.5,
+            157.0
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            970,
+            15,
+            223,
+            281
+          ],
+          "pixels": 23302,
+          "bottomX": [
+            970,
+            1186
+          ],
+          "bottomCenter": 1037.58,
+          "center": [
+            1081.5,
+            155.5
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            36,
+            330,
+            239,
+            279
+          ],
+          "pixels": 24818,
+          "bottomX": [
+            36,
+            270
+          ],
+          "bottomCenter": 111.89,
+          "center": [
+            155.5,
+            469.5
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            346,
+            330,
+            276,
+            279
+          ],
+          "pixels": 24692,
+          "bottomX": [
+            346,
+            565
+          ],
+          "bottomCenter": 418.39,
+          "center": [
+            484.0,
+            469.5
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            658,
+            329,
+            227,
+            280
+          ],
+          "pixels": 24154,
+          "bottomX": [
+            658,
+            880
+          ],
+          "bottomCenter": 732.62,
+          "center": [
+            771.5,
+            469.0
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            1014,
+            321,
+            162,
+            288
+          ],
+          "pixels": 20615,
+          "bottomX": [
+            1034,
+            1065
+          ],
+          "bottomCenter": 1049.32,
+          "center": [
+            1095.0,
+            465.0
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            32,
+            635,
+            276,
+            287
+          ],
+          "pixels": 23300,
+          "bottomX": [
+            61,
+            93
+          ],
+          "bottomCenter": 76.55,
+          "center": [
+            170.0,
+            778.5
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            407,
+            632,
+            139,
+            290
+          ],
+          "pixels": 19344,
+          "bottomX": [
+            423,
+            455
+          ],
+          "bottomCenter": 438.63,
+          "center": [
+            476.5,
+            777.0
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            651,
+            639,
+            249,
+            283
+          ],
+          "pixels": 24187,
+          "bottomX": [
+            651,
+            878
+          ],
+          "bottomCenter": 734.31,
+          "center": [
+            775.5,
+            780.5
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            970,
+            643,
+            245,
+            279
+          ],
+          "pixels": 24913,
+          "bottomX": [
+            970,
+            1210
+          ],
+          "bottomCenter": 1061.75,
+          "center": [
+            1092.5,
+            782.5
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            36,
+            955,
+            285,
+            277
+          ],
+          "pixels": 24675,
+          "bottomX": [
+            36,
+            267
+          ],
+          "bottomCenter": 110.94,
+          "center": [
+            178.5,
+            1093.5
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            347,
+            992,
+            239,
+            240
+          ],
+          "pixels": 25179,
+          "bottomX": [
+            347,
+            580
+          ],
+          "bottomCenter": 421.32,
+          "center": [
+            466.5,
+            1112.0
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            637,
+            958,
+            311,
+            273
+          ],
+          "pixels": 26029,
+          "bottomX": [
+            651,
+            885
+          ],
+          "bottomCenter": 787.96,
+          "center": [
+            792.5,
+            1094.5
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            970,
+            950,
+            226,
+            282
+          ],
+          "pixels": 23275,
+          "bottomX": [
+            970,
+            1191
+          ],
+          "bottomCenter": 1042.86,
+          "center": [
+            1083.0,
+            1091.0
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "okuyasu-motion-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "ea3c357072391ef64cc42a90d6d12f61d6cff73da2ee9a363093c5cb6fbbd5f2",
+      "parts": [
+        {
+          "bbox": [
+            37,
+            17,
+            223,
+            279
+          ],
+          "pixels": 24086,
+          "bottomX": [
+            37,
+            254
+          ],
+          "bottomCenter": 107.43,
+          "center": [
+            148.5,
+            156.5
+          ],
+          "index": 0
+        },
+        {
+          "bbox": [
+            345,
+            17,
+            218,
+            280
+          ],
+          "pixels": 23924,
+          "bottomX": [
+            345,
+            559
+          ],
+          "bottomCenter": 429.4,
+          "center": [
+            454.0,
+            157.0
+          ],
+          "index": 1
+        },
+        {
+          "bbox": [
+            641,
+            35,
+            270,
+            261
+          ],
+          "pixels": 24920,
+          "bottomX": [
+            850,
+            893
+          ],
+          "bottomCenter": 866.75,
+          "center": [
+            776.0,
+            165.5
+          ],
+          "index": 2
+        },
+        {
+          "bbox": [
+            980,
+            20,
+            189,
+            281
+          ],
+          "pixels": 22042,
+          "bottomX": [
+            1001,
+            1030
+          ],
+          "bottomCenter": 1016.56,
+          "center": [
+            1074.5,
+            160.5
+          ],
+          "index": 3
+        },
+        {
+          "bbox": [
+            30,
+            324,
+            280,
+            278
+          ],
+          "pixels": 26005,
+          "bottomX": [
+            249,
+            294
+          ],
+          "bottomCenter": 266.96,
+          "center": [
+            170.0,
+            463.0
+          ],
+          "index": 4
+        },
+        {
+          "bbox": [
+            366,
+            327,
+            211,
+            279
+          ],
+          "pixels": 23663,
+          "bottomX": [
+            385,
+            416
+          ],
+          "bottomCenter": 401.4,
+          "center": [
+            471.5,
+            466.5
+          ],
+          "index": 5
+        },
+        {
+          "bbox": [
+            640,
+            396,
+            211,
+            208
+          ],
+          "pixels": 20663,
+          "bottomX": [
+            642,
+            835
+          ],
+          "bottomCenter": 767.53,
+          "center": [
+            745.5,
+            500.0
+          ],
+          "index": 6
+        },
+        {
+          "bbox": [
+            908,
+            381,
+            297,
+            212
+          ],
+          "pixels": 23582,
+          "bottomX": [
+            1123,
+            1136
+          ],
+          "bottomCenter": 1130.51,
+          "center": [
+            1056.5,
+            487.0
+          ],
+          "index": 7
+        },
+        {
+          "bbox": [
+            25,
+            657,
+            262,
+            253
+          ],
+          "pixels": 24094,
+          "bottomX": [
+            25,
+            284
+          ],
+          "bottomCenter": 162.37,
+          "center": [
+            156.0,
+            783.5
+          ],
+          "index": 8
+        },
+        {
+          "bbox": [
+            376,
+            727,
+            168,
+            185
+          ],
+          "pixels": 18892,
+          "bottomX": [
+            403,
+            524
+          ],
+          "bottomCenter": 469.01,
+          "center": [
+            460.0,
+            819.5
+          ],
+          "index": 9
+        },
+        {
+          "bbox": [
+            719,
+            630,
+            180,
+            254
+          ],
+          "pixels": 18823,
+          "bottomX": [
+            760,
+            771
+          ],
+          "bottomCenter": 765.74,
+          "center": [
+            809.0,
+            757.0
+          ],
+          "index": 10
+        },
+        {
+          "bbox": [
+            996,
+            649,
+            193,
+            199
+          ],
+          "pixels": 17565,
+          "bottomX": [
+            1079,
+            1102
+          ],
+          "bottomCenter": 1088.12,
+          "center": [
+            1092.5,
+            748.5
+          ],
+          "index": 11
+        },
+        {
+          "bbox": [
+            55,
+            941,
+            218,
+            250
+          ],
+          "pixels": 21964,
+          "bottomX": [
+            151,
+            162
+          ],
+          "bottomCenter": 156.85,
+          "center": [
+            164.0,
+            1066.0
+          ],
+          "index": 12
+        },
+        {
+          "bbox": [
+            334,
+            1033,
+            234,
+            180
+          ],
+          "pixels": 21470,
+          "bottomX": [
+            337,
+            567
+          ],
+          "bottomCenter": 484.4,
+          "center": [
+            451.0,
+            1123.0
+          ],
+          "index": 13
+        },
+        {
+          "bbox": [
+            658,
+            938,
+            233,
+            277
+          ],
+          "pixels": 23041,
+          "bottomX": [
+            658,
+            890
+          ],
+          "bottomCenter": 780.23,
+          "center": [
+            774.5,
+            1076.5
+          ],
+          "index": 14
+        },
+        {
+          "bbox": [
+            998,
+            937,
+            213,
+            278
+          ],
+          "pixels": 25838,
+          "bottomX": [
+            1005,
+            1210
+          ],
+          "bottomCenter": 1166.8,
+          "center": [
+            1104.5,
+            1076.0
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "made-in-heaven-strike-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "dd1a138f578099f15fdc9a96459fcefc6e3067853bab7b249d2341c5143b53c2",
+      "parts": [
+        {
+          "bbox": [
+            230,
+            14,
+            962,
+            1222
+          ],
+          "pixels": 355185,
+          "bottomX": [
+            801,
+            850
+          ],
+          "bottomCenter": 827.59,
+          "center": [
+            711.0,
+            625.0
+          ]
+        }
+      ]
+    },
+    "the-hand-strike-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "e10c3ac25d31dadb21b3397f10c40452ed5bd74a5b5f6de9e4835e52269e5461",
+      "parts": [
+        {
+          "bbox": [
+            93,
+            28,
+            1109,
+            1187
+          ],
+          "pixels": 427594,
+          "bottomX": [
+            1023,
+            1082
+          ],
+          "bottomCenter": 1051.88,
+          "center": [
+            647.5,
+            621.5
+          ]
+        }
+      ]
+    },
+    "pucci-okuyasu-prone-v1.png": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "0e62811b28ae0081c3861d464de6a3bae5df3dd75b37a2aa1b419c34c5aa1d10",
+      "parts": [
+        {
+          "bbox": [
+            44,
+            252,
+            1164,
+            279
+          ],
+          "pixels": 214815,
+          "bottomX": [
+            679,
+            706
+          ],
+          "bottomCenter": 693.43,
+          "center": [
+            626.0,
+            391.5
+          ]
+        },
+        {
+          "bbox": [
+            40,
+            790,
+            1174,
+            267
+          ],
+          "pixels": 210594,
+          "bottomX": [
+            666,
+            878
+          ],
+          "bottomCenter": 799.21,
+          "center": [
+            627.0,
+            923.5
+          ]
+        }
+      ]
+    }
+  },
+  "references": [
+    {
+      "src": "assets/jojo/references/pucci-official.png",
+      "width": 894,
+      "height": 2229,
+      "mode": "P",
+      "sha256": "ac997846dabcd1aef269e40c47d6ae4227cf6c9589a802e705bb139eeb9a91f1",
+      "sourceNote": "Source URL and generation prompt owned by root generation record; this file records read-only reference identity."
+    },
+    {
+      "src": "assets/jojo/references/okuyasu-official.png",
+      "width": 1400,
+      "height": 2000,
+      "mode": "P",
+      "sha256": "4ccfb18c654d37f6273547eff0bb65387c83a232faf90b1991723b008794b697",
+      "sourceNote": "Source URL and generation prompt owned by root generation record; this file records read-only reference identity."
+    },
+    {
+      "src": "assets/jojo/references/made-in-heaven-official.png",
+      "width": 1536,
+      "height": 2080,
+      "mode": "RGBA",
+      "sha256": "3b4988ab8d71d82e8a17eb8d519dc31cf6e46cae211adf3c909c46de4660c2ae",
+      "sourceNote": "Source URL and generation prompt owned by root generation record; this file records read-only reference identity."
+    },
+    {
+      "src": "assets/jojo/references/the-hand-official.png",
+      "width": 1400,
+      "height": 2000,
+      "mode": "P",
+      "sha256": "362bba179e5191b2e2fa41918bfa1803b4edaba1157b49e2896b0012a03d1dcc",
+      "sourceNote": "Source URL and generation prompt owned by root generation record; this file records read-only reference identity."
+    }
+  ]
+}
