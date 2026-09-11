@@ -61,12 +61,14 @@ const CombatGeometry = (() => {
   });
   const commandsFor = id => expandedCommands[id] || {upper:'upper',heavy:'heavy',ranged:'ranged',dashRanged:'dashRanged',rangedUp:'rangedUp',rangedLow:'rangedLow',upSkill:id==='dio'?'timeAmbush':'starAscend',downSkill:id==='dio'?'knifeArray':'starCounter'};
   const melee = (label,style,damage,extra={}) => ({label,style,damage,melee:true,push:120,stun:.25,stop:.035,size:20,lunge:105,startup:.16,active:.12,recovery:.24,...extra});
-  const shot = (label,style,extra={}) => ({label,style,projectile:true,damage:42,push:120,stun:.20,stop:.025,size:20,speed:570,distance:740,radius:12,cost:16,startup:.18,active:.08,recovery:.23,...extra});
+  // U and directional-U attacks are free; projectile signature skills keep
+  // their explicit I-command costs below.
+  const shot = (label,style,extra={}) => ({label,style,projectile:true,damage:42,push:120,stun:.20,stop:.025,size:20,speed:570,distance:740,radius:12,cost:0,startup:.18,active:.08,recovery:.23,...extra});
   const expandedRules = {
     rootUpper:melee('生命·树根上挑','plant',50,{lift:-420,points:[[155,-230,24,-50]]}),
     vineSweep:melee('生命·藤蔓低缠','plant',50,{root:.38,points:[[170,-48,25,-50]]}),
     lifeSeed:shot('生命·甲虫种子','plant',{root:.20,speed:490}),
-    seedDash:shot('生命·疾走播种','plant',{cost:24,damage:48,root:.25,startup:.27,dashStart:.04,dashEnd:.21,dashSpeed:580}),
+    seedDash:shot('生命·疾走播种','plant',{damage:48,root:.25,startup:.27,dashStart:.04,dashEnd:.21,dashSpeed:580}),
     seedUp:shot('生命·飞鸟升种','plant',{angle:-Math.PI/5,lift:-290}),
     vineBind:shot('生命·贴地藤索','plant',{lane:'low',root:.40,speed:430,damage:38}),
     rootBloom:melee('黄金体验·树根升击','plant',26,{cost:50,startup:.18,active:.49,recovery:.32,contactTimes:[.18,.38,.60],damages:[26,26,58],lift:-310,lunge:0,radius:22,points:[[175,-150,28,-28],[195,-216,30,-32],[215,-282,30,-34]],lastKind:'rootBloomFinish'}),
@@ -75,7 +77,7 @@ const CombatGeometry = (() => {
     bombUpper:melee('杀手皇后·爆破上挑','bomb',56,{lift:-410,points:[[125,-230,22,-66]]}),
     bombTouch:melee('杀手皇后·接触炸弹','bomb',18,{mark:{delay:.70,count:1,damage:60,interval:.22},points:[[143,-160,25,-144]]}),
     coinBomb:shot('杀手皇后·硬币炸弹','bomb',{speed:460,damage:30,mark:{delay:.65,count:1,damage:26,interval:.22}}),
-    bombDash:shot('杀手皇后·突进爆弹','bomb',{damage:48,cost:24,startup:.29,dashStart:.05,dashEnd:.22,dashSpeed:580}),
+    bombDash:shot('杀手皇后·突进爆弹','bomb',{damage:48,startup:.29,dashStart:.05,dashEnd:.22,dashSpeed:580}),
     bombArc:shot('杀手皇后·抛物爆弹','bomb',{angle:-Math.PI/4,speed:430,damage:48,lift:-260}),
     groundBomb:shot('杀手皇后·贴地爆弹','bomb',{lane:'low',speed:370,damage:50}),
     sheerHeart:shot('杀手皇后·枯萎穿心攻击','bomb',{cost:55,damage:88,speed:210,distance:1250,radius:19,startup:.32,recovery:.35,homing:true,grounded:true,knockdown:true,push:320}),
@@ -85,7 +87,7 @@ const CombatGeometry = (() => {
     gravityUpper:melee('天堂制造·重力上挑','gravity',50,{lift:-535,push:65,points:[[125,-253,28,-62]]}),
     gravityCrush:melee('天堂制造·重力下压','gravity',76,{lift:280,knockdown:true,points:[[145,-85,28,-168]]}),
     speedNeedle:shot('天堂制造·时速针','speed',{speed:950,damage:36,distance:800,radius:8,startup:.10,recovery:.19}),
-    speedDash:shot('天堂制造·加速穿刺','speed',{cost:24,damage:44,speed:1060,startup:.23,dashStart:.025,dashEnd:.18,dashSpeed:880}),
+    speedDash:shot('天堂制造·加速穿刺','speed',{damage:44,speed:1060,startup:.23,dashStart:.025,dashEnd:.18,dashSpeed:880}),
     gravityShot:shot('天堂制造·升空引力','gravity',{angle:-Math.PI/4,lift:-410,speed:680,damage:38}),
     lowNeedle:shot('天堂制造·低空时针','speed',{lane:'low',speed:900,damage:36,radius:8}),
     heavenDrive:melee('天堂制造·加速突袭','speed',24,{cost:55,startup:.17,active:.43,recovery:.25,contactTimes:[.17,.32,.49],damages:[24,24,52],chargeStart:.08,chargeEnd:.58,chargeSpeed:500,chargeAcceleration:1600,push:70,points:[[145,-166,24,-155],[153,-178,24,-153],[170,-159,28,-153]],lastKind:'heavenDriveFinish'}),
@@ -93,8 +95,8 @@ const CombatGeometry = (() => {
     gravityWell:melee('天堂制造·重力牵引','gravity',55,{cost:40,startup:.24,active:.16,recovery:.40,lunge:0,pull:1100,pullCapture:true,stun:.38,radius:40,points:[[552,-132,40,-132]]}),
     spaceUpper:melee('轰炸空间·上扫削除','space',60,{lift:-440,startup:.19,points:[[175,-242,30,-60]]}),
     palmHeavy:melee('轰炸空间·合掌重击','space',94,{startup:.25,recovery:.33,push:390,knockdown:true,points:[[165,-148,25,-148]]}),
-    spaceTear:shot('轰炸空间·空间裂口','space',{damage:48,speed:400,distance:500,radius:19,pull:280,cost:18}),
-    eraseDash:shot('轰炸空间·踏步削除','space',{damage:56,cost:26,speed:460,distance:530,startup:.30,dashStart:.06,dashEnd:.23,dashSpeed:600}),
+    spaceTear:shot('轰炸空间·空间裂口','space',{damage:48,speed:400,distance:500,radius:19,pull:280}),
+    eraseDash:shot('轰炸空间·踏步削除','space',{damage:56,speed:460,distance:530,startup:.30,dashStart:.06,dashEnd:.23,dashSpeed:600}),
     spaceArc:shot('轰炸空间·上空裂口','space',{damage:46,angle:-Math.PI/5,lift:-350,speed:450,distance:550,radius:17}),
     lowErase:shot('轰炸空间·地面削除','space',{lane:'low',damage:44,speed:360,distance:540,pull:250,radius:18}),
     spaceErase:melee('轰炸空间·空间削除','space',38,{cost:35,startup:.23,active:.11,recovery:.34,lunge:0,erase:448,pullCapture:true,stun:.40,radius:29,points:[[672,-135,30,-135]]}),
@@ -114,12 +116,12 @@ const CombatGeometry = (() => {
       startup: .12, active: .13, recovery: .20 },
     heavy: { damage: 90, push: 340, stun: .28, stop: .050, size: 20, lunge: 100,
       startup: .14, active: .11, recovery: .25 },
-    ranged: { damage: 42, push: 120, stun: .20, stop: .025, size: 21, speed: 620, distance: 780, radius: 12, cost: 12 },
-    dashRanged: { damage: 58, push: 210, stun: .24, stop: .032, size: 25, speed: 780, distance: 950, radius: 14, cost: 22,
+    ranged: { damage: 42, push: 120, stun: .20, stop: .025, size: 21, speed: 620, distance: 780, radius: 12, cost: 0 },
+    dashRanged: { damage: 58, push: 210, stun: .24, stop: .032, size: 25, speed: 780, distance: 950, radius: 14, cost: 0,
       startup: .25, active: .09, recovery: .22, dashStart: .04, dashEnd: .20, dashSpeed: 650 },
-    rangedUp: { damage: 46, push: 100, stun: .25, stop: .030, size: 21, speed: 620, distance: 690, radius: 12, cost: 16,
+    rangedUp: { damage: 46, push: 100, stun: .25, stop: .030, size: 21, speed: 620, distance: 690, radius: 12, cost: 0,
       startup: .16, active: .09, recovery: .23, angle: -Math.PI / 5, lift: -280 },
-    rangedLow: { damage: 50, push: 180, stun: .23, stop: .030, size: 23, speed: 570, distance: 760, radius: 13, cost: 18,
+    rangedLow: { damage: 50, push: 180, stun: .23, stop: .030, size: 23, speed: 570, distance: 760, radius: 13, cost: 0,
       startup: .17, active: .10, recovery: .25 },
     starAscend: { damage: 24, damages: [24, 24, 68], push: 90, stun: .26, stop: .028, size: 16, lunge: 150, lift: -420,
       cost: 65, startup: .16, active: .39, recovery: Math.max(.31, ascendVoice + .12 - .55), voiceDuration: ascendVoice,
